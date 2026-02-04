@@ -8,5 +8,14 @@ namespace GeorgiaDavid_RPG
 {
     internal class Map
     {
+        public Map()
+        {
+
+        }
+
+        void DrawMap()
+        {
+
+        }
     }
 }

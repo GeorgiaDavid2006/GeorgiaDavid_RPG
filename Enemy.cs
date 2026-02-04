@@ -8,5 +8,19 @@ namespace GeorgiaDavid_RPG
 {
     internal class Enemy
     {
+        public Enemy()
+        {
+
+        }
+
+        void MoveEnemy()
+        {
+
+        }
+
+        void DrawEnemy()
+        {
+
+        }
     }
 }
