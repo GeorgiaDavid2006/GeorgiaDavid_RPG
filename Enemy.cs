@@ -8,9 +8,17 @@ namespace GeorgiaDavid_RPG
 {
     internal class Enemy
     {
-        public Enemy()
-        {
+        int _enemyPosX;
+        int _enemyPosY;
 
+        ConsoleColor _color;
+
+        public Enemy(int enemyPosX, int enemyPosY, ConsoleColor color)
+        {
+            _enemyPosX = enemyPosX;
+            _enemyPosY = enemyPosY;
+
+            _color = color;
         }
 
         void MoveEnemy()
@@ -18,11 +26,11 @@ namespace GeorgiaDavid_RPG
 
         }
 
-        void DrawEnemy(int enemyPosX, int enemyPosY, ConsoleColor color)
+        void DrawEnemy()
         {
             Console.CursorVisible = false;
-            Console.SetCursorPosition(enemyPosX, enemyPosY);
-            Console.ForegroundColor = color;
+            Console.SetCursorPosition(_enemyPosX, _enemyPosY);
+            Console.ForegroundColor = _color;
             Console.WriteLine("O");
         }
     }

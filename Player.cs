@@ -8,9 +8,16 @@ namespace GeorgiaDavid_RPG
 {
     internal class Player
     {
-        public Player()
-        {
+        int _playerPosX;
+        int _playerPosY;
+        ConsoleColor _color;
 
+        public Player(int playerPosX, int playerPosY, ConsoleColor color)
+        {
+            _playerPosX = playerPosX;
+            _playerPosY = playerPosY;
+
+            _color = color;
         }
 
         void PlayerInput()
@@ -18,11 +25,11 @@ namespace GeorgiaDavid_RPG
 
         }
 
-        void DrawPlayer(int playerPosX, int playerPosY, ConsoleColor color)
+        void DrawPlayer()
         {
             Console.CursorVisible = false;
-            Console.SetCursorPosition(playerPosX, playerPosY);
-            Console.ForegroundColor = color;
+            Console.SetCursorPosition(_playerPosX, _playerPosY);
+            Console.ForegroundColor = _color;
             Console.WriteLine("O");
         }
     }
