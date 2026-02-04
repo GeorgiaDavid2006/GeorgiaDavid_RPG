@@ -8,5 +8,14 @@ namespace GeorgiaDavid_RPG
 {
     internal class Player
     {
+        public Player()
+        {
+
+        }
+
+        void PlayerInput()
+        {
+
+        }
     }
 }
