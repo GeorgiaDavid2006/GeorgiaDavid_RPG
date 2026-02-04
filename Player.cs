@@ -18,9 +18,12 @@ namespace GeorgiaDavid_RPG
 
         }
 
-        void DrawPlayer()
+        void DrawPlayer(int playerPosX, int playerPosY, ConsoleColor color)
         {
-
+            Console.CursorVisible = false;
+            Console.SetCursorPosition(playerPosX, playerPosY);
+            Console.ForegroundColor = color;
+            Console.WriteLine("O");
         }
     }
 }

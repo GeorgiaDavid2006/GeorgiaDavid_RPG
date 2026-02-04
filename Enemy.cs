@@ -18,9 +18,12 @@ namespace GeorgiaDavid_RPG
 
         }
 
-        void DrawEnemy()
+        void DrawEnemy(int enemyPosX, int enemyPosY, ConsoleColor color)
         {
-
+            Console.CursorVisible = false;
+            Console.SetCursorPosition(enemyPosX, enemyPosY);
+            Console.ForegroundColor = color;
+            Console.WriteLine("O");
         }
     }
 }
