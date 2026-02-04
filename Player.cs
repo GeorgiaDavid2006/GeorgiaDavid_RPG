@@ -10,6 +10,7 @@ namespace GeorgiaDavid_RPG
     {
         int _playerPosX;
         int _playerPosY;
+
         ConsoleColor _color;
 
         public Player(int playerPosX, int playerPosY, ConsoleColor color)
