@@ -15,7 +15,7 @@ namespace GeorgiaDavid_RPG
 
         void UpdateHealth()
         {
-
+            
         }
     }
 }
