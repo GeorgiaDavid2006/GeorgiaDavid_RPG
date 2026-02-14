@@ -23,7 +23,7 @@ namespace GeorgiaDavid_RPG
 
         void MoveEnemy()
         {
-
+            
         }
 
         void DrawEnemy()

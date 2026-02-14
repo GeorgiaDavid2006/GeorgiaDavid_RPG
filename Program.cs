@@ -8,9 +8,10 @@ namespace GeorgiaDavid_RPG
 {
     internal class Program
     {
+        static Map levelMap = new Map();
         static void Main(string[] args)
         {
-
+            levelMap.DrawMap();
         }
     }
 }
