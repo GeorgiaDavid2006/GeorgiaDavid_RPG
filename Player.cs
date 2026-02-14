@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace GeorgiaDavid_RPG
 {
-    internal class Player
+    internal class Player : HealthSystem
     {
         int _playerPosX;
         int _playerPosY;
 
         ConsoleColor _color;
 
-        public Player(int playerPosX, int playerPosY, ConsoleColor color)
+        public Player(int playerMaxHealth, int playerCurrentHealth, int playerPosX, int playerPosY, ConsoleColor color)
+            : base(playerMaxHealth, playerCurrentHealth)
         {
             _playerPosX = playerPosX;
             _playerPosY = playerPosY;
@@ -21,7 +22,7 @@ namespace GeorgiaDavid_RPG
             _color = color;
         }
 
-        void PlayerInput()
+        public void PlayerInput()
         {
             if (!Console.KeyAvailable)
             {
@@ -61,9 +62,10 @@ namespace GeorgiaDavid_RPG
             {
                 _playerPosY = 12;
             }
+
         }
 
-        void DrawPlayer()
+        public void DrawPlayer()
         {
             Console.CursorVisible = false;
             Console.SetCursorPosition(_playerPosX, _playerPosY);

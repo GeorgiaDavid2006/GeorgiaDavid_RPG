@@ -8,14 +8,18 @@ namespace GeorgiaDavid_RPG
 {
     internal class HealthSystem
     {
-        public HealthSystem()
-        {
+        int _maxHealth;
+        int _currentHealth;
 
+        public HealthSystem(int maxHealth, int currentHealth)
+        {
+            _maxHealth = maxHealth;
+            _currentHealth = currentHealth;
         }
 
-        void UpdateHealth()
+        void UpdateHealth(int amount)
         {
-            
+            _currentHealth = _currentHealth + amount;
         }
     }
 }

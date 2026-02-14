@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace GeorgiaDavid_RPG
 {
-    internal class Enemy
+    class Enemy : HealthSystem
     {
         int _enemyPosX;
         int _enemyPosY;
 
-        ConsoleColor _color;
+        int _playerPosX;
+        int _playerPosY;
 
-        public Enemy(int enemyPosX, int enemyPosY, ConsoleColor color)
+        ConsoleColor _color;
+        public Enemy(int enemyMaxHealth, int enemyCurrentHealth, int enemyPosX, int enemyPosY, ConsoleColor color)
+            : base(enemyMaxHealth, enemyCurrentHealth)
         {
             _enemyPosX = enemyPosX;
             _enemyPosY = enemyPosY;
@@ -21,12 +24,12 @@ namespace GeorgiaDavid_RPG
             _color = color;
         }
 
-        void MoveEnemy()
+        public void MoveEnemy(Player player)
         {
-            
+           
         }
 
-        void DrawEnemy()
+        public void DrawEnemy()
         {
             Console.CursorVisible = false;
             Console.SetCursorPosition(_enemyPosX, _enemyPosY);
