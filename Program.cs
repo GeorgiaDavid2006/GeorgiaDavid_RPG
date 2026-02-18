@@ -25,19 +25,15 @@ namespace GeorgiaDavid_RPG
 
             while (isGameActive && isEnemyAlive)
             {
-                player.PlayerInput(enemy);
-                levelMap.DrawMap();
-                ShowHUD();
-                player.DrawPlayer();
-                enemy.MoveEnemy(player);
-                enemy.DrawEnemy();
-                Thread.Sleep(100);
+                
             }
         }
 
         static void ShowHUD()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Player Health: " + player._currentHealth);
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Enemy Health: " + enemy._currentHealth);
         }
     }
