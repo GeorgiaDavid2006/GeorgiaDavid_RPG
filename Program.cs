@@ -20,8 +20,6 @@ namespace GeorgiaDavid_RPG
         {
             levelMap.DrawMap();
             ShowHUD();
-            player.DrawPlayer();
-            enemy.DrawEnemy();
 
             while (isGameActive && isEnemyAlive)
             {

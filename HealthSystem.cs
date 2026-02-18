@@ -17,7 +17,7 @@ namespace GeorgiaDavid_RPG
             _currentHealth = currentHealth;
         }
 
-        void UpdateHealth(int amount)
+        public void UpdateHealth(int amount)
         {
             _currentHealth = _currentHealth + amount;
         }

@@ -64,13 +64,15 @@ namespace GeorgiaDavid_RPG
 
             if (_playerPosX == enemy._enemyPosX && _playerPosY == enemy._enemyPosY)
             {
-                enemy._currentHealth = enemy._currentHealth - 1;
+                enemy.UpdateHealth(-1);
                 enemy._enemyPosX = 30;
                 enemy._enemyPosY = 1;
             }
+
+            DrawPlayer();
         }
 
-        public void DrawPlayer()
+        void DrawPlayer()
         {
             Console.CursorVisible = false;
             Console.SetCursorPosition(_playerPosX, _playerPosY);
