@@ -37,7 +37,8 @@ namespace GeorgiaDavid_RPG
 
         static void ShowHUD()
         {
-            
+            Console.WriteLine("Player Health: " + player._currentHealth);
+            Console.WriteLine("Enemy Health: " + enemy._currentHealth);
         }
     }
 }

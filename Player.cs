@@ -42,7 +42,6 @@ namespace GeorgiaDavid_RPG
 
             if (inputKey.Key == ConsoleKey.S) _playerPosY += 1;
 
-
             if (_playerPosX <= 1)
             {
                 _playerPosX = 1;
