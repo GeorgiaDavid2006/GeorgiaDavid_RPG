@@ -27,6 +27,11 @@ namespace GeorgiaDavid_RPG
             {
                 
             }
+
+            while(isGameActive && !isEnemyAlive)
+            {
+
+            }
         }
 
         static void ShowHUD()
