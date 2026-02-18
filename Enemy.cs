@@ -27,15 +27,15 @@ namespace GeorgiaDavid_RPG
             {
                 _enemyPosX += 1;
             }
-           else if (_enemyPosX > player._playerPosX)
+           if (_enemyPosX > player._playerPosX)
             {
                 _enemyPosX -= 1;
             }
-           else if (_enemyPosY < player._playerPosY)
+           if (_enemyPosY < player._playerPosY)
             {
                 _enemyPosY += 1;
             }
-           else if (_enemyPosY > player._playerPosY)
+           if (_enemyPosY > player._playerPosY)
             {
                 _enemyPosY -= 1;
             }

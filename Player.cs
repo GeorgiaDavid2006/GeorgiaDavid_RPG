@@ -29,16 +29,28 @@ namespace GeorgiaDavid_RPG
                 return;
             }
 
-            if (inputKey == ConsoleKey.A) _playerPosX -= 1;
+            if (inputKey == ConsoleKey.A)
+            {
+                _playerPosX = _playerPosX - 1;
+            }
 
 
-            if (inputKey == ConsoleKey.D) _playerPosX += 1;
+            if (inputKey == ConsoleKey.D)
+            {
+                _playerPosX = _playerPosX + 1;
+            }
 
 
-            if (inputKey == ConsoleKey.W) _playerPosY -= 1;
+            if (inputKey == ConsoleKey.W)
+            {
+                _playerPosY = _playerPosY - 1;
+            }
 
 
-            if (inputKey == ConsoleKey.S) _playerPosY += 1;
+            if (inputKey == ConsoleKey.S)
+            {
+                _playerPosY = _playerPosY + 1;
+            }
 
             if (_playerPosX < 1)
             {
