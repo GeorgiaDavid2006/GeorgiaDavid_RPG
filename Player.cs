@@ -8,8 +8,8 @@ namespace GeorgiaDavid_RPG
 {
     internal class Player : HealthSystem
     {
-        int _playerPosX;
-        int _playerPosY;
+        public int _playerPosX;
+        public int _playerPosY;
 
         ConsoleColor _color;
 

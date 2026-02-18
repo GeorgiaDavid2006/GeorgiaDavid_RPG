@@ -26,7 +26,27 @@ namespace GeorgiaDavid_RPG
 
         public void MoveEnemy(Player player)
         {
-           
+           if (_enemyPosX < player._playerPosX)
+            {
+                _enemyPosX += 1;
+            }
+           else if (_enemyPosX > player._playerPosX)
+            {
+                _enemyPosX -= 1;
+            }
+           else if (_enemyPosY < player._playerPosY)
+            {
+                _enemyPosY += 1;
+            }
+           else if (_enemyPosY > player._playerPosY)
+            {
+                _enemyPosY -= 1;
+            }
+
+           if (_enemyPosX == player._playerPosX && _enemyPosY == player._playerPosY)
+            {
+                
+            }
         }
 
         public void DrawEnemy()
