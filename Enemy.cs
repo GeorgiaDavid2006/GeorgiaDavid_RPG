@@ -8,11 +8,8 @@ namespace GeorgiaDavid_RPG
 {
     class Enemy : HealthSystem
     {
-        int _enemyPosX;
-        int _enemyPosY;
-
-        int _playerPosX;
-        int _playerPosY;
+        public int _enemyPosX;
+        public int _enemyPosY;
 
         ConsoleColor _color;
         public Enemy(int enemyMaxHealth, int enemyCurrentHealth, int enemyPosX, int enemyPosY, ConsoleColor color)

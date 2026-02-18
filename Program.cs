@@ -25,7 +25,7 @@ namespace GeorgiaDavid_RPG
 
             while (isGameActive && isEnemyAlive)
             {
-                player.PlayerInput();
+                player.PlayerInput(enemy);
                 levelMap.DrawMap();
                 ShowHUD();
                 player.DrawPlayer();

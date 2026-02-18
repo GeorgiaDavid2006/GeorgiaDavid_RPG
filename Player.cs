@@ -22,7 +22,7 @@ namespace GeorgiaDavid_RPG
             _color = color;
         }
 
-        public void PlayerInput()
+        public void PlayerInput(Enemy enemy)
         {
             if (!Console.KeyAvailable)
             {
@@ -63,6 +63,12 @@ namespace GeorgiaDavid_RPG
                 _playerPosY = 12;
             }
 
+            if (_playerPosX == enemy._enemyPosX && _playerPosY == enemy._enemyPosY)
+            {
+                enemy._currentHealth = enemy._currentHealth - 1;
+                enemy._enemyPosX = 30;
+                enemy._enemyPosY = 1;
+            }
         }
 
         public void DrawPlayer()
