@@ -18,12 +18,20 @@ namespace GeorgiaDavid_RPG
 
         static void Main(string[] args)
         {
+            ConsoleKey inputKey;
+
             levelMap.DrawMap();
             ShowHUD();
 
             while (isGameActive && isEnemyAlive)
             {
-                
+                Console.SetCursorPosition(0, 0);
+                inputKey = Console.ReadKey(true).Key;
+                player.PlayerInput(enemy, inputKey);
+                levelMap.DrawMap();
+                player.DrawPlayer();
+                enemy.MoveEnemy(player);
+                enemy.DrawEnemy();
             }
 
             while(isGameActive && !isEnemyAlive)

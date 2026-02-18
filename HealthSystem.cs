@@ -20,6 +20,11 @@ namespace GeorgiaDavid_RPG
         public void UpdateHealth(int amount)
         {
             _currentHealth = _currentHealth + amount;
+
+            if (_currentHealth > _maxHealth)
+            {
+                _currentHealth = _maxHealth;
+            }
         }
     }
 }

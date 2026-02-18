@@ -46,11 +46,9 @@ namespace GeorgiaDavid_RPG
                 player._playerPosX = 1;
                 player._playerPosY = 1;
             }
-
-            DrawEnemy();
         }
 
-        void DrawEnemy()
+        public void DrawEnemy()
         {
             Console.CursorVisible = false;
             Console.SetCursorPosition(_enemyPosX, _enemyPosY);

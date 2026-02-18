@@ -22,42 +22,40 @@ namespace GeorgiaDavid_RPG
             _color = color;
         }
 
-        public void PlayerInput(Enemy enemy)
+        public void PlayerInput(Enemy enemy, ConsoleKey inputKey)
         {
             if (!Console.KeyAvailable)
             {
                 return;
             }
 
-            ConsoleKeyInfo inputKey = Console.ReadKey(true);
-
-            if (inputKey.Key == ConsoleKey.A) _playerPosX -= 1;
+            if (inputKey == ConsoleKey.A) _playerPosX -= 1;
 
 
-            if (inputKey.Key == ConsoleKey.D) _playerPosX += 1;
+            if (inputKey == ConsoleKey.D) _playerPosX += 1;
 
 
-            if (inputKey.Key == ConsoleKey.W) _playerPosY -= 1;
+            if (inputKey == ConsoleKey.W) _playerPosY -= 1;
 
 
-            if (inputKey.Key == ConsoleKey.S) _playerPosY += 1;
+            if (inputKey == ConsoleKey.S) _playerPosY += 1;
 
-            if (_playerPosX <= 1)
+            if (_playerPosX < 1)
             {
                 _playerPosX = 1;
             }
 
-            if (_playerPosY <= 1)
+            if (_playerPosY < 1)
             {
                 _playerPosY = 1;
             }
 
-            if (_playerPosX >= 30)
+            if (_playerPosX > 30)
             {
                 _playerPosX = 30;
             }
 
-            if (_playerPosY >= 12)
+            if (_playerPosY > 12)
             {
                 _playerPosY = 12;
             }
@@ -68,11 +66,9 @@ namespace GeorgiaDavid_RPG
                 enemy._enemyPosX = 30;
                 enemy._enemyPosY = 1;
             }
-
-            DrawPlayer();
         }
 
-        void DrawPlayer()
+        public void DrawPlayer()
         {
             Console.CursorVisible = false;
             Console.SetCursorPosition(_playerPosX, _playerPosY);
