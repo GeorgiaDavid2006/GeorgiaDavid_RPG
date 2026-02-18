@@ -8,8 +8,8 @@ namespace GeorgiaDavid_RPG
 {
     internal class HealthSystem
     {
-        int _maxHealth;
-        int _currentHealth;
+        public int _maxHealth;
+        public int _currentHealth;
 
         public HealthSystem(int maxHealth, int currentHealth)
         {

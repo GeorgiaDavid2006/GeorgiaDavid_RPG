@@ -45,7 +45,9 @@ namespace GeorgiaDavid_RPG
 
            if (_enemyPosX == player._playerPosX && _enemyPosY == player._playerPosY)
             {
-                
+                player._currentHealth = player._currentHealth - 1;
+                player._playerPosX = 1;
+                player._playerPosY = 1;
             }
         }
 
