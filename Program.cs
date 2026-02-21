@@ -12,7 +12,7 @@ namespace GeorgiaDavid_RPG
         static Map levelMap = new Map();
         static Player player = new Player(5, 5, 1, 1, ConsoleColor.Red);
         static Enemy enemy1 = new Enemy(5, 5, 30, 1, ConsoleColor.Blue);
-        static Enemy enemy2 = new Enemy(10, 10, 30, 12, ConsoleColor.Magenta);
+        static Enemy enemy2 = new Enemy(8, 8, 30, 12, ConsoleColor.Magenta);
 
         static bool isGameActive = true;
 
@@ -51,7 +51,7 @@ namespace GeorgiaDavid_RPG
             while (isGameActive && enemy1._currentHealth <= 0)
             {
                 Console.SetCursorPosition(0, 0);
-                player.PlayerInput(enemy1);
+                player.PlayerInput(enemy2);
                 levelMap.DrawMap();
                 ShowHUD();
                 player.DrawPlayer();
@@ -76,12 +76,20 @@ namespace GeorgiaDavid_RPG
 
         static void ShowHUD()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Player Health: " + player._currentHealth);
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Enemy1 Health: " + enemy1._currentHealth);
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("Enemy2 Health: " + enemy2._currentHealth);
+            if (enemy1._currentHealth > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Player Health: " + player._currentHealth);
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("Enemy1 Health: " + enemy1._currentHealth);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Player Health: " + player._currentHealth);
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("Enemy2 Health: " + enemy2._currentHealth);
+            }
         }
     }
 }
