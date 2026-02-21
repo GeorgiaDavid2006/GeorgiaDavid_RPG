@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeorgiaDavid_RPG
 {
-    internal class HealthSystem
+    class HealthSystem
     {
         public int _maxHealth;
         public int _currentHealth;

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace GeorgiaDavid_RPG
 {
-    internal class Player : HealthSystem
+    class Player : HealthSystem
     {
         public int _playerPosX;
         public int _playerPosY;
+
+        public int _amountOfGold = 0;
 
         ConsoleColor _color;
 
@@ -103,6 +105,16 @@ namespace GeorgiaDavid_RPG
             Console.SetCursorPosition(_playerPosX, _playerPosY);
             Console.ForegroundColor = _color;
             Console.WriteLine("O");
+        }
+
+        public void CollectGold(Gold gold)
+        {
+            if (_playerPosX == gold._goldPosX && _playerPosY == gold._goldPosY)
+            {
+                _amountOfGold = _amountOfGold + gold._goldValue;
+                gold.collected = true;
+                gold.OnCollected();
+            }
         }
     }
 }
