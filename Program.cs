@@ -14,7 +14,6 @@ namespace GeorgiaDavid_RPG
         static Enemy enemy = new Enemy(5, 5, 30, 1, ConsoleColor.Blue);
 
         static bool isGameActive = true;
-        static bool isEnemyAlive = true;
 
         static void Main(string[] args)
         {
@@ -23,19 +22,29 @@ namespace GeorgiaDavid_RPG
             player.DrawPlayer();
             enemy.DrawEnemy();
 
-            while (isGameActive && isEnemyAlive)
+            while (isGameActive)
             {
                 Console.SetCursorPosition(0, 0);
                 player.PlayerInput(enemy);
                 levelMap.DrawMap();
+                ShowHUD();
                 player.DrawPlayer();
                 enemy.MoveEnemy(player);
                 enemy.DrawEnemy();
+                Thread.Sleep(100);
+
+                if (player._currentHealth <= 0)
+                {
+                    isGameActive = false;
+                }
             }
 
-            while(isGameActive && !isEnemyAlive)
+            if (!isGameActive)
             {
-
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Game Over!");
+                Console.ReadKey();
             }
         }
 

@@ -13,6 +13,8 @@ namespace GeorgiaDavid_RPG
 
         ConsoleColor _color;
 
+        public bool isPlayersTurn = true;
+
         public Player(int playerMaxHealth, int playerCurrentHealth, int playerPosX, int playerPosY, ConsoleColor color)
             : base(playerMaxHealth, playerCurrentHealth)
         {
@@ -24,6 +26,11 @@ namespace GeorgiaDavid_RPG
 
         public void PlayerInput(Enemy enemy)
         {
+            if (_currentHealth <= 0)
+            {
+                return;
+            }
+
             if (!Console.KeyAvailable)
             {
                 return;
@@ -34,23 +41,27 @@ namespace GeorgiaDavid_RPG
             if (inputKey.Key == ConsoleKey.A)
             {
                 _playerPosX = _playerPosX - 1;
+                isPlayersTurn = false;
             }
 
             if (inputKey.Key == ConsoleKey.D)
             {
                 _playerPosX = _playerPosX + 1;
+                isPlayersTurn = false;
             }
 
 
             if (inputKey.Key == ConsoleKey.W)
             {
                 _playerPosY = _playerPosY - 1;
+                isPlayersTurn = false;
             }
 
 
             if (inputKey.Key == ConsoleKey.S)
             {
                 _playerPosY = _playerPosY + 1;
+                isPlayersTurn = false;
             }
 
             if (_playerPosX < 1)
@@ -83,6 +94,11 @@ namespace GeorgiaDavid_RPG
 
         public void DrawPlayer()
         {
+            if (_currentHealth <= 0)
+            {
+                return;
+            }
+
             Console.CursorVisible = false;
             Console.SetCursorPosition(_playerPosX, _playerPosY);
             Console.ForegroundColor = _color;

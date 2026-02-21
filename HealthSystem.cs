@@ -25,6 +25,11 @@ namespace GeorgiaDavid_RPG
             {
                 _currentHealth = _maxHealth;
             }
+
+            else if (_currentHealth < 0)
+            {
+                _currentHealth = 0;
+            }
         }
     }
 }
