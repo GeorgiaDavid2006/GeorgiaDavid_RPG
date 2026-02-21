@@ -22,32 +22,33 @@ namespace GeorgiaDavid_RPG
             _color = color;
         }
 
-        public void PlayerInput(Enemy enemy, ConsoleKey inputKey)
+        public void PlayerInput(Enemy enemy)
         {
             if (!Console.KeyAvailable)
             {
                 return;
             }
 
-            if (inputKey == ConsoleKey.A)
+            ConsoleKeyInfo inputKey = Console.ReadKey(true);
+
+            if (inputKey.Key == ConsoleKey.A)
             {
                 _playerPosX = _playerPosX - 1;
             }
 
-
-            if (inputKey == ConsoleKey.D)
+            if (inputKey.Key == ConsoleKey.D)
             {
                 _playerPosX = _playerPosX + 1;
             }
 
 
-            if (inputKey == ConsoleKey.W)
+            if (inputKey.Key == ConsoleKey.W)
             {
                 _playerPosY = _playerPosY - 1;
             }
 
 
-            if (inputKey == ConsoleKey.S)
+            if (inputKey.Key == ConsoleKey.S)
             {
                 _playerPosY = _playerPosY + 1;
             }
