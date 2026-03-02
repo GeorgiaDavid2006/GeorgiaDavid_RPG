@@ -12,6 +12,7 @@ namespace GeorgiaDavid_RPG
         public int _enemyPosY;
 
         ConsoleColor _color;
+
         public Enemy(int enemyMaxHealth, int enemyCurrentHealth, int enemyPosX, int enemyPosY, ConsoleColor color)
             : base(enemyMaxHealth, enemyCurrentHealth)
         {
@@ -23,21 +24,35 @@ namespace GeorgiaDavid_RPG
 
         public void MoveEnemy(Player player)
         {
-           if (_enemyPosX < player._playerPosX)
+            if (player.isPlayersTurn == true)
+            {
+                return;
+            }
+
+            if (_currentHealth <= 0)
+            {
+                return;
+            }
+
+            if (_enemyPosX < player._playerPosX)
             {
                 _enemyPosX += 1;
+                player.isPlayersTurn = true;
             }
            if (_enemyPosX > player._playerPosX)
             {
                 _enemyPosX -= 1;
+                player.isPlayersTurn = true;
             }
            if (_enemyPosY < player._playerPosY)
             {
                 _enemyPosY += 1;
+                player.isPlayersTurn = true;
             }
            if (_enemyPosY > player._playerPosY)
             {
                 _enemyPosY -= 1;
+                player.isPlayersTurn = true;
             }
 
            if (_enemyPosX == player._playerPosX && _enemyPosY == player._playerPosY)
@@ -50,6 +65,11 @@ namespace GeorgiaDavid_RPG
 
         public void DrawEnemy()
         {
+            if (_currentHealth <= 0)
+            {
+                return;
+            }
+
             Console.CursorVisible = false;
             Console.SetCursorPosition(_enemyPosX, _enemyPosY);
             Console.ForegroundColor = _color;

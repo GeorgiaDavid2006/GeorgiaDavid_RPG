@@ -6,17 +6,23 @@ using System.Threading.Tasks;
 
 namespace GeorgiaDavid_RPG
 {
-    internal class Player : HealthSystem
+    class Player : HealthSystem
     {
         public int _playerPosX;
         public int _playerPosY;
 
+<<<<<<< HEAD
         private int _borderLeft = 1;
         private int _borderRight = 12;
         private int _borderUp = 1;
         private int _borderDown = 30;
+=======
+        public int _amountOfGold = 0;
+>>>>>>> bb4ff6237f5fdf14a592fa01b21db680a64bee87
 
         ConsoleColor _color;
+
+        public bool isPlayersTurn = true;
 
         public Player(int playerMaxHealth, int playerCurrentHealth, int playerPosX, int playerPosY, ConsoleColor color)
             : base(playerMaxHealth, playerCurrentHealth)
@@ -27,34 +33,44 @@ namespace GeorgiaDavid_RPG
             _color = color;
         }
 
-        public void PlayerInput(Enemy enemy, ConsoleKey inputKey)
+        public void PlayerInput(Enemy enemy)
         {
+            if (_currentHealth <= 0)
+            {
+                return;
+            }
+
             if (!Console.KeyAvailable)
             {
                 return;
             }
 
-            if (inputKey == ConsoleKey.A)
+            ConsoleKeyInfo inputKey = Console.ReadKey(true);
+
+            if (inputKey.Key == ConsoleKey.A)
             {
                 _playerPosX = _playerPosX - 1;
+                isPlayersTurn = false;
             }
 
-
-            if (inputKey == ConsoleKey.D)
+            if (inputKey.Key == ConsoleKey.D)
             {
                 _playerPosX = _playerPosX + 1;
+                isPlayersTurn = false;
             }
 
 
-            if (inputKey == ConsoleKey.W)
+            if (inputKey.Key == ConsoleKey.W)
             {
                 _playerPosY = _playerPosY - 1;
+                isPlayersTurn = false;
             }
 
 
-            if (inputKey == ConsoleKey.S)
+            if (inputKey.Key == ConsoleKey.S)
             {
                 _playerPosY = _playerPosY + 1;
+                isPlayersTurn = false;
             }
 
             if (_playerPosX < _borderLeft)
@@ -87,10 +103,25 @@ namespace GeorgiaDavid_RPG
 
         public void DrawPlayer()
         {
+            if (_currentHealth <= 0)
+            {
+                return;
+            }
+
             Console.CursorVisible = false;
             Console.SetCursorPosition(_playerPosX, _playerPosY);
             Console.ForegroundColor = _color;
             Console.WriteLine("O");
+        }
+
+        public void CollectGold(Gold gold)
+        {
+            if (_playerPosX == gold._goldPosX && _playerPosY == gold._goldPosY)
+            {
+                _amountOfGold = _amountOfGold + gold._goldValue;
+                gold.collected = true;
+                gold.OnCollected();
+            }
         }
     }
 }

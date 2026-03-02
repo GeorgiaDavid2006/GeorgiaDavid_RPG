@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeorgiaDavid_RPG
 {
-    internal class HealthSystem
+    class HealthSystem
     {
         public int _maxHealth;
         public int _currentHealth;
@@ -24,6 +24,11 @@ namespace GeorgiaDavid_RPG
             if (_currentHealth > _maxHealth)
             {
                 _currentHealth = _maxHealth;
+            }
+
+            else if (_currentHealth < 0)
+            {
+                _currentHealth = 0;
             }
         }
     }

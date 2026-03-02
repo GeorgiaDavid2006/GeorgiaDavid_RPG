@@ -1,0 +1,8 @@
+C:\Users\georg\ProbuilderCity\GeorgiaDavid_RPG\bin\Release\Map.Txt
+C:\Users\georg\ProbuilderCity\GeorgiaDavid_RPG\bin\Release\GeorgiaDavid_RPG.exe.config
+C:\Users\georg\ProbuilderCity\GeorgiaDavid_RPG\bin\Release\GeorgiaDavid_RPG.exe
+C:\Users\georg\ProbuilderCity\GeorgiaDavid_RPG\bin\Release\GeorgiaDavid_RPG.pdb
+C:\Users\georg\ProbuilderCity\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.csproj.AssemblyReference.cache
+C:\Users\georg\ProbuilderCity\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.csproj.CoreCompileInputs.cache
+C:\Users\georg\ProbuilderCity\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.exe
+C:\Users\georg\ProbuilderCity\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.pdb
