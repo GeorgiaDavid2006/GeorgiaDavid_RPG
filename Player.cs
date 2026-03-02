@@ -11,14 +11,12 @@ namespace GeorgiaDavid_RPG
         public int _playerPosX;
         public int _playerPosY;
 
-<<<<<<< HEAD
         private int _borderLeft = 1;
         private int _borderRight = 12;
         private int _borderUp = 1;
         private int _borderDown = 30;
-=======
+
         public int _amountOfGold = 0;
->>>>>>> bb4ff6237f5fdf14a592fa01b21db680a64bee87
 
         ConsoleColor _color;
 
