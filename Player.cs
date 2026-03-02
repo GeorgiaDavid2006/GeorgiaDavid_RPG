@@ -8,13 +8,16 @@ namespace GeorgiaDavid_RPG
 {
     class Player : HealthSystem
     {
-        public int _playerPosX;
-        public int _playerPosY;
+        public int _currentPlayerPosX;
+        public int _currentPlayerPosY;
+
+        private int _previousPlayerPosX;
+        private int _previousPlayerPosY;
 
         private int _borderLeft = 1;
-        private int _borderRight = 12;
+        private int _borderDown = 12;
         private int _borderUp = 1;
-        private int _borderDown = 30;
+        private int _borderRight = 30;
 
         public int _amountOfGold = 0;
 
@@ -25,8 +28,8 @@ namespace GeorgiaDavid_RPG
         public Player(int playerMaxHealth, int playerCurrentHealth, int playerPosX, int playerPosY, ConsoleColor color)
             : base(playerMaxHealth, playerCurrentHealth)
         {
-            _playerPosX = playerPosX;
-            _playerPosY = playerPosY;
+            _currentPlayerPosX = playerPosX;
+            _currentPlayerPosY = playerPosY;
 
             _color = color;
         }
@@ -47,55 +50,71 @@ namespace GeorgiaDavid_RPG
 
             if (inputKey.Key == ConsoleKey.A)
             {
-                _playerPosX = _playerPosX - 1;
+                _previousPlayerPosX = _currentPlayerPosX;
+                _currentPlayerPosX = _currentPlayerPosX - 1;
                 isPlayersTurn = false;
             }
 
             if (inputKey.Key == ConsoleKey.D)
             {
-                _playerPosX = _playerPosX + 1;
+                _previousPlayerPosX = _currentPlayerPosX;
+                _currentPlayerPosX = _currentPlayerPosX + 1;
                 isPlayersTurn = false;
             }
 
 
             if (inputKey.Key == ConsoleKey.W)
             {
-                _playerPosY = _playerPosY - 1;
+                _previousPlayerPosY = _currentPlayerPosY;
+                _currentPlayerPosY = _currentPlayerPosY - 1;
                 isPlayersTurn = false;
             }
 
 
             if (inputKey.Key == ConsoleKey.S)
             {
-                _playerPosY = _playerPosY + 1;
+                _previousPlayerPosY = _currentPlayerPosY;
+                _currentPlayerPosY = _currentPlayerPosY + 1;
                 isPlayersTurn = false;
             }
 
-            if (_playerPosX < _borderLeft)
+            if (_currentPlayerPosX < _borderLeft)
             {
-                _playerPosX = _borderLeft;
+                _currentPlayerPosX = _borderLeft;
             }
 
-            if (_playerPosY < _borderUp)
+            if (_currentPlayerPosY < _borderUp)
             {
-                _playerPosY = _borderUp;
+                _currentPlayerPosY = _borderUp;
             }
 
-            if (_playerPosX > _borderRight)
+            if (_currentPlayerPosX > _borderRight)
             {
-                _playerPosX = _borderRight;
+                _currentPlayerPosX = _borderRight;
             }
 
-            if (_playerPosY > _borderDown)
+            if (_currentPlayerPosY > _borderDown)
             {
-                _playerPosY = _borderDown;
+                _currentPlayerPosY = _borderDown;
             }
 
-            if (_playerPosX == enemy._enemyPosX && _playerPosY == enemy._enemyPosY)
+            if (_currentPlayerPosX == enemy._enemyPosX && _currentPlayerPosY == enemy._enemyPosY)
             {
-                enemy.UpdateHealth(-1);
-                enemy._enemyPosX = 30;
-                enemy._enemyPosY = 1;
+                if (enemy._enemyPosY == _currentPlayerPosY)
+                {
+                    enemy.UpdateHealth(-1);
+                    enemy._enemyPosX = 30;
+                    enemy._enemyPosY = 1;
+                    _currentPlayerPosX = _previousPlayerPosX;
+                }
+
+                if (enemy._enemyPosX == _currentPlayerPosX)
+                {
+                    enemy.UpdateHealth(-1);
+                    enemy._enemyPosX = 30;
+                    enemy._enemyPosY = 1;
+                    _currentPlayerPosY = _previousPlayerPosY;
+                }
             }
         }
 
@@ -107,14 +126,14 @@ namespace GeorgiaDavid_RPG
             }
 
             Console.CursorVisible = false;
-            Console.SetCursorPosition(_playerPosX, _playerPosY);
+            Console.SetCursorPosition(_currentPlayerPosX, _currentPlayerPosY);
             Console.ForegroundColor = _color;
             Console.WriteLine("O");
         }
 
         public void CollectGold(Gold gold)
         {
-            if (_playerPosX == gold._goldPosX && _playerPosY == gold._goldPosY)
+            if (_currentPlayerPosX == gold._goldPosX && _currentPlayerPosY == gold._goldPosY)
             {
                 _amountOfGold = _amountOfGold + gold._goldValue;
                 gold.collected = true;

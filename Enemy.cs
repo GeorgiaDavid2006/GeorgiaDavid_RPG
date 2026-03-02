@@ -34,32 +34,32 @@ namespace GeorgiaDavid_RPG
                 return;
             }
 
-            if (_enemyPosX < player._playerPosX)
+            if (_enemyPosX < player._currentPlayerPosX)
             {
                 _enemyPosX += 1;
                 player.isPlayersTurn = true;
             }
-           if (_enemyPosX > player._playerPosX)
+           if (_enemyPosX > player._currentPlayerPosX)
             {
                 _enemyPosX -= 1;
                 player.isPlayersTurn = true;
             }
-           if (_enemyPosY < player._playerPosY)
+           if (_enemyPosY < player._currentPlayerPosY)
             {
                 _enemyPosY += 1;
                 player.isPlayersTurn = true;
             }
-           if (_enemyPosY > player._playerPosY)
+           if (_enemyPosY > player._currentPlayerPosY)
             {
                 _enemyPosY -= 1;
                 player.isPlayersTurn = true;
             }
 
-           if (_enemyPosX == player._playerPosX && _enemyPosY == player._playerPosY)
+           if (_enemyPosX == player._currentPlayerPosX && _enemyPosY == player._currentPlayerPosY)
             {
                 player.UpdateHealth(-1);
-                player._playerPosX = 1;
-                player._playerPosY = 1;
+                player._currentPlayerPosX = 1;
+                player._currentPlayerPosY = 1;
             }
         }
 
