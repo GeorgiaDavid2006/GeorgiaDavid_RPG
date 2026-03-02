@@ -11,6 +11,11 @@ namespace GeorgiaDavid_RPG
         public int _playerPosX;
         public int _playerPosY;
 
+        private int _borderLeft = 1;
+        private int _borderRight = 12;
+        private int _borderUp = 1;
+        private int _borderDown = 30;
+
         ConsoleColor _color;
 
         public Player(int playerMaxHealth, int playerCurrentHealth, int playerPosX, int playerPosY, ConsoleColor color)
@@ -52,24 +57,24 @@ namespace GeorgiaDavid_RPG
                 _playerPosY = _playerPosY + 1;
             }
 
-            if (_playerPosX < 1)
+            if (_playerPosX < _borderLeft)
             {
-                _playerPosX = 1;
+                _playerPosX = _borderLeft;
             }
 
-            if (_playerPosY < 1)
+            if (_playerPosY < _borderUp)
             {
-                _playerPosY = 1;
+                _playerPosY = _borderUp;
             }
 
-            if (_playerPosX > 30)
+            if (_playerPosX > _borderRight)
             {
-                _playerPosX = 30;
+                _playerPosX = _borderRight;
             }
 
-            if (_playerPosY > 12)
+            if (_playerPosY > _borderDown)
             {
-                _playerPosY = 12;
+                _playerPosY = _borderDown;
             }
 
             if (_playerPosX == enemy._enemyPosX && _playerPosY == enemy._enemyPosY)
