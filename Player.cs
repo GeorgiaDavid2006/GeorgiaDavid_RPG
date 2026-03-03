@@ -139,7 +139,17 @@ namespace GeorgiaDavid_RPG
             {
                 _amountOfGold = _amountOfGold + gold._goldValue;
                 gold.collected = true;
-                gold.OnCollected();
+
+                if (lastTurnWasX == true && gold._goldValue > 0)
+                {
+                    _currentPlayerPosX = _previousPlayerPosX;
+                    gold.OnCollected();
+                }
+                else if (lastTurnWasX == false && gold._goldValue > 0)
+                {
+                    _currentPlayerPosY = _previousPlayerPosY;
+                    gold.OnCollected();
+                }
             }
         }
     }
