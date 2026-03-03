@@ -24,6 +24,7 @@ namespace GeorgiaDavid_RPG
         ConsoleColor _color;
 
         public bool isPlayersTurn = true;
+        private bool lastTurnWasX = false;
 
         public Player(int playerMaxHealth, int playerCurrentHealth, int playerPosX, int playerPosY, ConsoleColor color)
             : base(playerMaxHealth, playerCurrentHealth)
@@ -51,6 +52,7 @@ namespace GeorgiaDavid_RPG
             if (inputKey.Key == ConsoleKey.A)
             {
                 _previousPlayerPosX = _currentPlayerPosX;
+                lastTurnWasX = true;
                 _currentPlayerPosX = _currentPlayerPosX - 1;
                 isPlayersTurn = false;
             }
@@ -58,6 +60,7 @@ namespace GeorgiaDavid_RPG
             if (inputKey.Key == ConsoleKey.D)
             {
                 _previousPlayerPosX = _currentPlayerPosX;
+                lastTurnWasX = true;
                 _currentPlayerPosX = _currentPlayerPosX + 1;
                 isPlayersTurn = false;
             }
@@ -66,6 +69,7 @@ namespace GeorgiaDavid_RPG
             if (inputKey.Key == ConsoleKey.W)
             {
                 _previousPlayerPosY = _currentPlayerPosY;
+                lastTurnWasX = false;
                 _currentPlayerPosY = _currentPlayerPosY - 1;
                 isPlayersTurn = false;
             }
@@ -74,6 +78,7 @@ namespace GeorgiaDavid_RPG
             if (inputKey.Key == ConsoleKey.S)
             {
                 _previousPlayerPosY = _currentPlayerPosY;
+                lastTurnWasX = false;
                 _currentPlayerPosY = _currentPlayerPosY + 1;
                 isPlayersTurn = false;
             }
@@ -100,20 +105,18 @@ namespace GeorgiaDavid_RPG
 
             if (_currentPlayerPosX == enemy._enemyPosX && _currentPlayerPosY == enemy._enemyPosY)
             {
-                if (_currentPlayerPosX == _previousPlayerPosX)
+                enemy.UpdateHealth(-1);
+                enemy._enemyPosX = 30;
+                enemy._enemyPosY = 1;
+
+                if (lastTurnWasX == true)
                 {
-                    enemy.UpdateHealth(-1);
-                    enemy._enemyPosX = 30;
-                    enemy._enemyPosY = 1;
-                    _currentPlayerPosY = _previousPlayerPosY;
+                    _currentPlayerPosX = _previousPlayerPosX;
                 }
                 else
                 {
-                    enemy.UpdateHealth(-1);
-                    enemy._enemyPosX = 30;
-                    enemy._enemyPosY = 1;
-                    _currentPlayerPosX = _previousPlayerPosX;
-                }  
+                    _currentPlayerPosY = _previousPlayerPosY;
+                }
             }
         }
 
