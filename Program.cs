@@ -22,6 +22,12 @@ namespace GeorgiaDavid_RPG
 
         static List<Gold> goldToSpawn = new List<Gold> { gold1, gold2, gold3, gold4, gold5 };
 
+        static HealthItem healthItem1 = new HealthItem(7, 8, 1);
+        static HealthItem healthItem2 = new HealthItem(2, 11, 1);
+        static HealthItem healthItem3 = new HealthItem(8, 9, 1);
+
+        static List<HealthItem> healthItemsToSpawn = new List<HealthItem> { healthItem1, healthItem2, healthItem3 };
+
         static bool isGameActive = true;
 
         static void Main(string[] args)
@@ -34,6 +40,10 @@ namespace GeorgiaDavid_RPG
             {
                 gold.DrawGold();
             }
+            foreach(HealthItem healthItem in healthItemsToSpawn)
+            {
+                healthItem.DrawHealthItem();
+            }
 
             while (isGameActive && enemy1._currentHealth > 0)
             {
@@ -44,16 +54,22 @@ namespace GeorgiaDavid_RPG
                 player.CollectGold(gold3);
                 player.CollectGold(gold4);
                 player.CollectGold(gold5);
+                player.CollectHealthItem(healthItem1);
+                player.CollectHealthItem(healthItem2);
+                player.CollectHealthItem(healthItem3);
                 levelMap.DrawMap();
                 ShowHUD();
                 player.DrawPlayer();
                 enemy1.MoveEnemy(player);
                 enemy1.DrawEnemy();
-                gold1.DrawGold();
-                gold2.DrawGold();
-                gold3.DrawGold();
-                gold4.DrawGold();
-                gold5.DrawGold();
+                foreach(Gold gold in goldToSpawn)
+                {
+                    gold.DrawGold();
+                }
+                foreach (HealthItem healthItem in healthItemsToSpawn)
+                {
+                    healthItem.DrawHealthItem();
+                }
                 Thread.Sleep(100);
 
                 if (player._currentHealth <= 0)
@@ -79,16 +95,22 @@ namespace GeorgiaDavid_RPG
                 player.CollectGold(gold3);
                 player.CollectGold(gold4);
                 player.CollectGold(gold5);
+                player.CollectHealthItem(healthItem1);
+                player.CollectHealthItem(healthItem2);
+                player.CollectHealthItem(healthItem3);
                 levelMap.DrawMap();
                 ShowHUD();
                 player.DrawPlayer();
                 enemy2.MoveEnemy(player);
                 enemy2.DrawEnemy();
-                gold1.DrawGold();
-                gold2.DrawGold();
-                gold3.DrawGold();
-                gold4.DrawGold();
-                gold5.DrawGold();
+                foreach (Gold gold in goldToSpawn)
+                {
+                    gold.DrawGold();
+                }
+                foreach (HealthItem healthItem in healthItemsToSpawn)
+                {
+                    healthItem.DrawHealthItem();
+                }
                 Thread.Sleep(100);
 
                 if (player._currentHealth <= 0)

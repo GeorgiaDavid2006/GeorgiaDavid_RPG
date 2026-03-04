@@ -152,5 +152,25 @@ namespace GeorgiaDavid_RPG
                 }
             }
         }
+
+        public void CollectHealthItem(HealthItem healthItem)
+        {
+            if (_currentPlayerPosX == healthItem._healthItemPosX && _currentPlayerPosY == healthItem._healthItemPosY)
+            {
+                UpdateHealth(healthItem._healthValue);
+                healthItem.collected = true;
+
+                if (lastTurnWasX == true && healthItem._healthValue > 0)
+                {
+                    _currentPlayerPosX = _previousPlayerPosX;
+                    healthItem.OnCollected();
+                }
+                else if (lastTurnWasX == false && healthItem._healthValue > 0)
+                {
+                    _currentPlayerPosY = _previousPlayerPosY;
+                    healthItem.OnCollected();
+                }
+            }
+        }
     }
 }
