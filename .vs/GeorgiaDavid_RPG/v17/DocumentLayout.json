@@ -3,28 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|c:\\users\\georg\\probuildercity\\georgiadavid_rpg\\greenenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:greenenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|c:\\users\\georg\\probuildercity\\georgiadavid_rpg\\pinkenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:pinkenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|c:\\users\\georg\\probuildercity\\georgiadavid_rpg\\blueenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:blueenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|c:\\users\\georg\\probuildercity\\georgiadavid_rpg\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|c:\\users\\georg\\probuildercity\\georgiadavid_rpg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|c:\\users\\georg\\probuildercity\\georgiadavid_rpg\\map.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:map.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\gold.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:gold.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|c:\\users\\georg\\probuildercity\\georgiadavid_rpg\\healthitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:healthitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|c:\\users\\georg\\probuildercity\\georgiadavid_rpg\\gem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:gem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\healthsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:healthsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,35 +62,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Gold.cs",
-              "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Gold.cs",
-              "RelativeDocumentMoniker": "Gold.cs",
-              "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Gold.cs",
-              "RelativeToolTip": "Gold.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAqwCYAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "GreenEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\GreenEnemy.cs",
+              "RelativeDocumentMoniker": "GreenEnemy.cs",
+              "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\GreenEnemy.cs",
+              "RelativeToolTip": "GreenEnemy.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-21T02:10:09.701Z"
+              "WhenOpened": "2026-03-04T21:47:03.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PinkEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\PinkEnemy.cs",
+              "RelativeDocumentMoniker": "PinkEnemy.cs",
+              "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\PinkEnemy.cs",
+              "RelativeToolTip": "PinkEnemy.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T21:46:53.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BlueEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\BlueEnemy.cs",
+              "RelativeDocumentMoniker": "BlueEnemy.cs",
+              "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\BlueEnemy.cs",
+              "RelativeToolTip": "BlueEnemy.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T21:43:12.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\GameManager.cs",
+              "RelativeDocumentMoniker": "GameManager.cs",
+              "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\GameManager.cs",
+              "RelativeToolTip": "GameManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T21:37:23.533Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Map.cs",
-              "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Map.cs",
-              "RelativeDocumentMoniker": "Map.cs",
-              "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Map.cs",
-              "RelativeToolTip": "Map.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T00:45:00.385Z"
+              "Title": "Map.Txt",
+              "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Map.Txt",
+              "RelativeDocumentMoniker": "Map.Txt",
+              "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Map.Txt",
+              "RelativeToolTip": "Map.Txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-03-04T21:38:29.132Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
+              "Title": "Gem.cs",
+              "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Gem.cs",
+              "RelativeDocumentMoniker": "Gem.cs",
+              "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Gem.cs",
+              "RelativeToolTip": "Gem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T21:37:21.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "HealthSystem.cs",
               "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\HealthSystem.cs",
               "RelativeDocumentMoniker": "HealthSystem.cs",
@@ -70,11 +152,51 @@
               "RelativeToolTip": "HealthSystem.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T00:44:53.063Z"
+              "WhenOpened": "2026-02-14T00:44:53.063Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
+              "Title": "HealthItem.cs",
+              "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\HealthItem.cs",
+              "RelativeDocumentMoniker": "HealthItem.cs",
+              "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\HealthItem.cs",
+              "RelativeToolTip": "HealthItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T21:37:05.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Gold.cs",
+              "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Gold.cs",
+              "RelativeDocumentMoniker": "Gold.cs",
+              "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Gold.cs",
+              "RelativeToolTip": "Gold.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwCYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T02:10:09.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Map.cs",
+              "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Map.cs",
+              "RelativeDocumentMoniker": "Map.cs",
+              "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Map.cs",
+              "RelativeToolTip": "Map.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T00:45:00.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemy.cs",
@@ -86,25 +208,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
               "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AQIAAF8AAAAAAAAAAAAAAHMAAAAjAAAA",
+              "ViewState": "AQIAAF8AAAAAAAAAAAAAAHMAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T00:44:39.989Z"
+              "WhenOpened": "2026-02-14T00:44:39.989Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAsAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T00:44:35.408Z",
               "EditorCaption": ""

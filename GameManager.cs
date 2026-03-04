@@ -10,8 +10,6 @@ namespace GeorgiaDavid_RPG
     {
         public Map levelMap = new Map();
         public Player player = new Player(5, 5, 0, 0, ConsoleColor.Red);
-        public Enemy enemy1 = new Enemy(5, 5, 30, 1, ConsoleColor.Blue);
-        public Enemy enemy2 = new Enemy(8, 8, 30, 12, ConsoleColor.Magenta);
 
         public Gold gold1 = new Gold(3, 3, 1);
         public Gold gold2 = new Gold(5, 6, 1);
