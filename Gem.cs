@@ -8,6 +8,32 @@ namespace GeorgiaDavid_RPG
 {
     class Gem
     {
+        public int _gemPosX;
+        public int _gemPosY;
 
+        ConsoleColor _color;
+
+        public bool collected = false;
+
+        public Gem(int gemPosX, int gemPosY, ConsoleColor consoleColor)
+        {
+            _gemPosX = gemPosX;
+            _gemPosY = gemPosY;
+
+            _color = consoleColor;
+        }
+
+        public void DrawGem()
+        {
+            if (collected == true)
+            {
+                return;
+            }
+
+            Console.CursorVisible = false;
+            Console.SetCursorPosition(_gemPosX, _gemPosY);
+            Console.ForegroundColor = _color;
+            Console.WriteLine("*");
+        }
     }
 }

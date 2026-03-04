@@ -172,5 +172,22 @@ namespace GeorgiaDavid_RPG
                 }
             }
         }
+
+        public void CollectGem(Gem gem)
+        {
+            if (_currentPlayerPosX == gem._gemPosX && _currentPlayerPosY == gem._gemPosY)
+            {
+                gem.collected = true;
+
+                if (lastTurnWasX == true)
+                {
+                    _currentPlayerPosX = _previousPlayerPosX;
+                }
+                else if (lastTurnWasX == false)
+                {
+                    _currentPlayerPosY = _previousPlayerPosY;
+                }
+            }
+        }
     }
 }
