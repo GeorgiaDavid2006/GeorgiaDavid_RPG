@@ -8,16 +8,18 @@ namespace GeorgiaDavid_RPG
 {
     class Player : HealthSystem
     {
+        Map levelMap = new Map();
+
         public int _currentPlayerPosX;
         public int _currentPlayerPosY;
 
         private int _previousPlayerPosX;
         private int _previousPlayerPosY;
 
-        private int _borderLeft = 1;
-        private int _borderDown = 12;
-        private int _borderUp = 1;
-        private int _borderRight = 30;
+        private int _borderLeft = 0;
+        private int _borderDown = 11;
+        private int _borderUp = 0;
+        private int _borderRight = 29;
 
         public int _amountOfGold = 0;
 
@@ -53,34 +55,56 @@ namespace GeorgiaDavid_RPG
             {
                 _previousPlayerPosX = _currentPlayerPosX;
                 lastTurnWasX = true;
-                _currentPlayerPosX = _currentPlayerPosX - 1;
-                isPlayersTurn = false;
+                if (_currentPlayerPosX - 1 >= _borderLeft)
+                {
+                    if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX - 1] != '▓')
+                    {
+                        _currentPlayerPosX = _currentPlayerPosX - 1;
+                        isPlayersTurn = false;
+                    }
+                }
             }
 
             if (inputKey.Key == ConsoleKey.D)
             {
                 _previousPlayerPosX = _currentPlayerPosX;
                 lastTurnWasX = true;
-                _currentPlayerPosX = _currentPlayerPosX + 1;
-                isPlayersTurn = false;
+                if (_currentPlayerPosX + 1 <= _borderRight)
+                {
+                    if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX + 1] != '▓')
+                    {
+                        _currentPlayerPosX = _currentPlayerPosX + 1;
+                        isPlayersTurn = false;
+                    }
+                }
             }
-
 
             if (inputKey.Key == ConsoleKey.W)
             {
                 _previousPlayerPosY = _currentPlayerPosY;
                 lastTurnWasX = false;
-                _currentPlayerPosY = _currentPlayerPosY - 1;
-                isPlayersTurn = false;
+                if (_currentPlayerPosY - 1 >= _borderUp)
+                {
+                    if (levelMap.map[_currentPlayerPosY - 1][_currentPlayerPosX] != '▓')
+                    {
+                        _currentPlayerPosY = _currentPlayerPosY - 1;
+                        isPlayersTurn = false;
+                    }
+                }
             }
-
 
             if (inputKey.Key == ConsoleKey.S)
             {
                 _previousPlayerPosY = _currentPlayerPosY;
                 lastTurnWasX = false;
-                _currentPlayerPosY = _currentPlayerPosY + 1;
-                isPlayersTurn = false;
+                if (_currentPlayerPosY + 1 <= _borderDown)
+                {
+                    if (levelMap.map[_currentPlayerPosY + 1][_currentPlayerPosX] != '▓')
+                    {
+                        _currentPlayerPosY = _currentPlayerPosY + 1;
+                        isPlayersTurn = false;
+                    }
+                }
             }
 
             if (_currentPlayerPosX < _borderLeft)
@@ -107,7 +131,7 @@ namespace GeorgiaDavid_RPG
             {
                 enemy.UpdateHealth(-1);
                 enemy._enemyPosX = 30;
-                enemy._enemyPosY = 1;
+                enemy._enemyPosY = 0;
 
                 if (lastTurnWasX == true)
                 {
@@ -128,7 +152,7 @@ namespace GeorgiaDavid_RPG
             }
 
             Console.CursorVisible = false;
-            Console.SetCursorPosition(_currentPlayerPosX, _currentPlayerPosY);
+            Console.SetCursorPosition(_currentPlayerPosX + 1, _currentPlayerPosY + 1);
             Console.ForegroundColor = _color;
             Console.WriteLine("O");
         }

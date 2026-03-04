@@ -9,18 +9,16 @@ namespace GeorgiaDavid_RPG
 {
     internal class Program
     {
-        static GameManager gameManager;
-
-        static List<Gold> goldToSpawn = new List<Gold> { gameManager.gold1, gameManager.gold2, gameManager.gold3, gameManager.gold4, gameManager.gold5 };
-
-        static List<HealthItem> healthItemsToSpawn = new List<HealthItem> { gameManager.healthItem1, gameManager.healthItem2, gameManager.healthItem3 };
-
         static bool isGameActive = true;
 
         static void Main(string[] args)
         {
+            GameManager gameManager = new GameManager();
+            List<Gold> goldToSpawn = new List<Gold> { gameManager.gold1, gameManager.gold2, gameManager.gold3, gameManager.gold4, gameManager.gold5 };
+            List<HealthItem> healthItemsToSpawn = new List<HealthItem> { gameManager.healthItem1, gameManager.healthItem2, gameManager.healthItem3 };
+
             gameManager.levelMap.DrawMap();
-            ShowHUD();
+            ShowHUD(gameManager);
             gameManager.player.DrawPlayer();
             gameManager.enemy1.DrawEnemy();
             foreach(Gold gold in goldToSpawn)
@@ -45,7 +43,7 @@ namespace GeorgiaDavid_RPG
                 gameManager.player.CollectHealthItem(gameManager.healthItem2);
                 gameManager.player.CollectHealthItem(gameManager.healthItem3);
                 gameManager.levelMap.DrawMap();
-                ShowHUD();
+                ShowHUD(gameManager);
                 gameManager.player.DrawPlayer();
                 gameManager.enemy1.MoveEnemy(gameManager.player);
                 gameManager.enemy1.DrawEnemy();
@@ -86,7 +84,7 @@ namespace GeorgiaDavid_RPG
                 gameManager.player.CollectHealthItem(gameManager.healthItem2);
                 gameManager.player.CollectHealthItem(gameManager.healthItem3);
                 gameManager.levelMap.DrawMap();
-                ShowHUD();
+                ShowHUD(gameManager);
                 gameManager.player.DrawPlayer();
                 gameManager.enemy2.MoveEnemy(gameManager.player);
                 gameManager.enemy2.DrawEnemy();
@@ -115,7 +113,7 @@ namespace GeorgiaDavid_RPG
             }
         }
 
-        static void ShowHUD()
+        static void ShowHUD(GameManager gameManager)
         {
             if (gameManager.enemy1._currentHealth > 0)
             {

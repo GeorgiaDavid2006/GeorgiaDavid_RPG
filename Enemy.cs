@@ -58,8 +58,8 @@ namespace GeorgiaDavid_RPG
            if (_enemyPosX == player._currentPlayerPosX && _enemyPosY == player._currentPlayerPosY)
             {
                 player.UpdateHealth(-1);
-                player._currentPlayerPosX = 1;
-                player._currentPlayerPosY = 1;
+                player._currentPlayerPosX = 0;
+                player._currentPlayerPosY = 0;
             }
         }
 
@@ -71,7 +71,7 @@ namespace GeorgiaDavid_RPG
             }
 
             Console.CursorVisible = false;
-            Console.SetCursorPosition(_enemyPosX, _enemyPosY);
+            Console.SetCursorPosition(_enemyPosX + 1, _enemyPosY + 1);
             Console.ForegroundColor = _color;
             Console.WriteLine("O");
         }

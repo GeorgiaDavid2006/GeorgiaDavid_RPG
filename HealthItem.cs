@@ -37,7 +37,7 @@ namespace GeorgiaDavid_RPG
             }
 
             Console.CursorVisible = false;
-            Console.SetCursorPosition(_healthItemPosX, _healthItemPosY);
+            Console.SetCursorPosition(_healthItemPosX + 1, _healthItemPosY + 1);
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("+");
         }

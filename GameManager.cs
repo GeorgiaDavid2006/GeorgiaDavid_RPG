@@ -9,7 +9,7 @@ namespace GeorgiaDavid_RPG
     class GameManager
     {
         public Map levelMap = new Map();
-        public Player player = new Player(5, 5, 1, 1, ConsoleColor.Red);
+        public Player player = new Player(5, 5, 0, 0, ConsoleColor.Red);
         public Enemy enemy1 = new Enemy(5, 5, 30, 1, ConsoleColor.Blue);
         public Enemy enemy2 = new Enemy(8, 8, 30, 12, ConsoleColor.Magenta);
 

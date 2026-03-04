@@ -9,7 +9,7 @@ namespace GeorgiaDavid_RPG
 {
     internal class Map
     {
-        string[] map;
+        public string[] map;
 
         public Map()
         {
