@@ -31,7 +31,7 @@ namespace GeorgiaDavid_RPG
             }
 
             Console.CursorVisible = false;
-            Console.SetCursorPosition(_gemPosX, _gemPosY);
+            Console.SetCursorPosition(_gemPosX + 1, _gemPosY + 1);
             Console.ForegroundColor = _color;
             Console.WriteLine("*");
         }

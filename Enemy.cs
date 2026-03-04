@@ -6,30 +6,41 @@ using System.Threading.Tasks;
 
 namespace GeorgiaDavid_RPG
 {
-    class Enemy : HealthSystem
+    class Enemy
     {
         public int _enemyPosX;
         public int _enemyPosY;
 
-        ConsoleColor _color;
+        public int _attackPower;
 
-        public Enemy(int enemyMaxHealth, int enemyCurrentHealth, int enemyPosX, int enemyPosY, ConsoleColor color)
-            : base(enemyMaxHealth, enemyCurrentHealth)
+        public HealthSystem enemyHealthSystem = new HealthSystem(5, 5);
+
+        public int _currentHealth;
+        public int _maxHealth;
+
+        public ConsoleColor _color;
+
+        public Enemy(int enemyMaxHealth, int enemyCurrentHealth, int enemyPosX, int enemyPosY, ConsoleColor color, int attackPower)
         {
             _enemyPosX = enemyPosX;
             _enemyPosY = enemyPosY;
 
+            _attackPower = attackPower;
+
             _color = color;
+
+            _currentHealth = enemyHealthSystem._currentHealth;
+            _maxHealth = enemyHealthSystem._maxHealth;
         }
 
-        public void MoveEnemy(Player player)
+        public virtual void MoveEnemy(Player player)
         {
             if (player.isPlayersTurn == true)
             {
                 return;
             }
 
-            if (_currentHealth <= 0)
+            if (enemyHealthSystem._currentHealth <= 0)
             {
                 return;
             }
@@ -57,15 +68,30 @@ namespace GeorgiaDavid_RPG
 
            if (_enemyPosX == player._currentPlayerPosX && _enemyPosY == player._currentPlayerPosY)
             {
-                player.UpdateHealth(-1);
+                player.playerHealthSystem.UpdateHealth(_attackPower);
                 player._currentPlayerPosX = 0;
                 player._currentPlayerPosY = 0;
             }
         }
 
-        public void DrawEnemy()
+        public virtual void UpdateHealth(int amount)
         {
-            if (_currentHealth <= 0)
+            enemyHealthSystem._currentHealth = enemyHealthSystem._currentHealth + amount;
+
+            if (enemyHealthSystem._currentHealth > enemyHealthSystem._maxHealth)
+            {
+                enemyHealthSystem._currentHealth = enemyHealthSystem._maxHealth;
+            }
+
+            else if (enemyHealthSystem._currentHealth < 0)
+            {
+                enemyHealthSystem._currentHealth = 0;
+            }
+        }
+
+        public virtual void DrawEnemy()
+        {
+            if (enemyHealthSystem._currentHealth <= 0)
             {
                 return;
             }

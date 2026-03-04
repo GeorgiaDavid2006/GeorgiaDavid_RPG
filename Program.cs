@@ -14,13 +14,32 @@ namespace GeorgiaDavid_RPG
         static void Main(string[] args)
         {
             GameManager gameManager = new GameManager();
+
+            List<BlueEnemy> blueEnemies = new List<BlueEnemy> { gameManager.blueEnemy1, gameManager.blueEnemy2, gameManager.blueEnemy3 }; 
+
+            List<PinkEnemy> pinkEnemies = new List<PinkEnemy> { gameManager.pinkEnemy1, gameManager.pinkEnemy2 };
+
+            List<GreenEnemy> greenEnemies = new List<GreenEnemy> { gameManager.greenEnemy1, gameManager.greenEnemy2 };
+
             List<Gold> goldToSpawn = new List<Gold> { gameManager.gold1, gameManager.gold2, gameManager.gold3, gameManager.gold4, gameManager.gold5 };
+
             List<HealthItem> healthItemsToSpawn = new List<HealthItem> { gameManager.healthItem1, gameManager.healthItem2, gameManager.healthItem3 };
 
             gameManager.levelMap.DrawMap();
             ShowHUD(gameManager);
             gameManager.player.DrawPlayer();
-            gameManager.enemy1.DrawEnemy();
+            foreach(BlueEnemy blueEnemy in blueEnemies)
+            {
+                blueEnemy.DrawEnemy();
+            }
+            foreach(PinkEnemy pinkEnemy in pinkEnemies)
+            {
+                pinkEnemy.DrawEnemy();
+            }
+            foreach(GreenEnemy greenEnemy in greenEnemies) 
+            { 
+                greenEnemy.DrawEnemy(); 
+            }
             foreach(Gold gold in goldToSpawn)
             {
                 gold.DrawGold();
@@ -29,11 +48,18 @@ namespace GeorgiaDavid_RPG
             {
                 healthItem.DrawHealthItem();
             }
+            gameManager.gem.DrawGem();
 
-            while (isGameActive && gameManager.enemy1._currentHealth > 0)
+            while (isGameActive && gameManager.player.hasWon == false)
             {
                 Console.SetCursorPosition(0, 0);
-                gameManager.player.PlayerInput(gameManager.enemy1);
+                gameManager.player.PlayerInput(gameManager.blueEnemy1);
+                gameManager.player.PlayerInput(gameManager.blueEnemy2);
+                gameManager.player.PlayerInput(gameManager.blueEnemy3);
+                gameManager.player.PlayerInput(gameManager.pinkEnemy1);
+                gameManager.player.PlayerInput(gameManager.pinkEnemy2);
+                gameManager.player.PlayerInput(gameManager.greenEnemy1);
+                gameManager.player.PlayerInput(gameManager.greenEnemy2);
                 gameManager.player.CollectGold(gameManager.gold1);
                 gameManager.player.CollectGold(gameManager.gold2);
                 gameManager.player.CollectGold(gameManager.gold3);
@@ -42,52 +68,25 @@ namespace GeorgiaDavid_RPG
                 gameManager.player.CollectHealthItem(gameManager.healthItem1);
                 gameManager.player.CollectHealthItem(gameManager.healthItem2);
                 gameManager.player.CollectHealthItem(gameManager.healthItem3);
+                gameManager.player.CollectGem(gameManager.gem);
                 gameManager.levelMap.DrawMap();
                 ShowHUD(gameManager);
                 gameManager.player.DrawPlayer();
-                gameManager.enemy1.MoveEnemy(gameManager.player);
-                gameManager.enemy1.DrawEnemy();
-                foreach(Gold gold in goldToSpawn)
+                foreach (BlueEnemy blueEnemy in blueEnemies)
                 {
-                    gold.DrawGold();
+                    blueEnemy.MoveEnemy(gameManager.player);
+                    blueEnemy.DrawEnemy();
                 }
-                foreach (HealthItem healthItem in healthItemsToSpawn)
+                foreach (PinkEnemy pinkEnemy in pinkEnemies)
                 {
-                    healthItem.DrawHealthItem();
+                    pinkEnemy.MoveEnemy(gameManager.player);
+                    pinkEnemy.DrawEnemy();
                 }
-                Thread.Sleep(100);
-
-                if (gameManager.player._currentHealth <= 0)
+                foreach (GreenEnemy greenEnemy in greenEnemies)
                 {
-                    isGameActive = false;
+                    greenEnemy.MoveEnemy(gameManager.player);
+                    greenEnemy.DrawEnemy();
                 }
-            }
-
-            if (!isGameActive)
-            {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Game Over!");
-                Console.ReadKey();
-            }
-
-            while (isGameActive && gameManager.enemy1._currentHealth <= 0)
-            {
-                Console.SetCursorPosition(0, 0);
-                gameManager.player.PlayerInput(gameManager.enemy2);
-                gameManager.player.CollectGold(gameManager.gold1);
-                gameManager.player.CollectGold(gameManager.gold2);
-                gameManager.player.CollectGold(gameManager.gold3);
-                gameManager.player.CollectGold(gameManager.gold4);
-                gameManager.player.CollectGold(gameManager.gold5);
-                gameManager.player.CollectHealthItem(gameManager.healthItem1);
-                gameManager.player.CollectHealthItem(gameManager.healthItem2);
-                gameManager.player.CollectHealthItem(gameManager.healthItem3);
-                gameManager.levelMap.DrawMap();
-                ShowHUD(gameManager);
-                gameManager.player.DrawPlayer();
-                gameManager.enemy2.MoveEnemy(gameManager.player);
-                gameManager.enemy2.DrawEnemy();
                 foreach (Gold gold in goldToSpawn)
                 {
                     gold.DrawGold();
@@ -96,9 +95,10 @@ namespace GeorgiaDavid_RPG
                 {
                     healthItem.DrawHealthItem();
                 }
+                gameManager.gem.DrawGem();
                 Thread.Sleep(100);
 
-                if (gameManager.player._currentHealth <= 0)
+                if (gameManager.player.playerHealthSystem._currentHealth <= 0)
                 {
                     isGameActive = false;
                 }
@@ -111,28 +111,31 @@ namespace GeorgiaDavid_RPG
                 Console.WriteLine("Game Over!");
                 Console.ReadKey();
             }
+
+            if (isGameActive == false)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Game Over!");
+                Console.ReadKey();
+            }
+
+            if(gameManager.player.hasWon == true)
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Level Clear");
+                Console.ReadKey();
+            }
         }
 
         static void ShowHUD(GameManager gameManager)
         {
-            if (gameManager.enemy1._currentHealth > 0)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Player Health: " + gameManager.player._currentHealth);
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("Enemy1 Health: " + gameManager.enemy1._currentHealth);
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Gold = " + gameManager.player._amountOfGold);
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Player Health: " + gameManager.player._currentHealth);
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine("Enemy2 Health: " + gameManager.enemy2._currentHealth);
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Gold = " + gameManager.player._amountOfGold);
-            }
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Player Health: " + gameManager.player.playerHealthSystem._currentHealth);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Gold = " + gameManager.player._amountOfGold);
+            
         }
     }
 }

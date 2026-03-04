@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace GeorgiaDavid_RPG
 {
-    class Player : HealthSystem
+    class Player
     {
         Map levelMap = new Map();
+
+        public HealthSystem playerHealthSystem = new HealthSystem(5, 5);
+
+        public int _currentHealth;
+        public int _maxHealth;
 
         public int _currentPlayerPosX;
         public int _currentPlayerPosY;
@@ -23,23 +28,28 @@ namespace GeorgiaDavid_RPG
 
         public int _amountOfGold = 0;
 
+        public int _indexOfEnemies;
+
         ConsoleColor _color;
 
         public bool isPlayersTurn = true;
         private bool lastTurnWasX = false;
+        public bool hasWon = false;
 
         public Player(int playerMaxHealth, int playerCurrentHealth, int playerPosX, int playerPosY, ConsoleColor color)
-            : base(playerMaxHealth, playerCurrentHealth)
         {
             _currentPlayerPosX = playerPosX;
             _currentPlayerPosY = playerPosY;
 
             _color = color;
+
+            _currentHealth = playerHealthSystem._currentHealth;
+            _maxHealth = playerHealthSystem._maxHealth;
         }
 
         public void PlayerInput(Enemy enemy)
         {
-            if (_currentHealth <= 0)
+            if (playerHealthSystem._currentHealth <= 0)
             {
                 return;
             }
@@ -129,9 +139,9 @@ namespace GeorgiaDavid_RPG
 
             if (_currentPlayerPosX == enemy._enemyPosX && _currentPlayerPosY == enemy._enemyPosY)
             {
-                enemy.UpdateHealth(-1);
+                enemy.enemyHealthSystem.UpdateHealth(-1);
                 enemy._enemyPosX = 30;
-                enemy._enemyPosY = 0;
+                enemy._enemyPosY = -1;
 
                 if (lastTurnWasX == true)
                 {
@@ -146,7 +156,7 @@ namespace GeorgiaDavid_RPG
 
         public void DrawPlayer()
         {
-            if (_currentHealth <= 0)
+            if (playerHealthSystem._currentHealth <= 0)
             {
                 return;
             }
@@ -181,7 +191,7 @@ namespace GeorgiaDavid_RPG
         {
             if (_currentPlayerPosX == healthItem._healthItemPosX && _currentPlayerPosY == healthItem._healthItemPosY)
             {
-                UpdateHealth(healthItem._healthValue);
+                playerHealthSystem.UpdateHealth(healthItem._healthValue);
                 healthItem.collected = true;
 
                 if (lastTurnWasX == true && healthItem._healthValue > 0)
@@ -202,6 +212,7 @@ namespace GeorgiaDavid_RPG
             if (_currentPlayerPosX == gem._gemPosX && _currentPlayerPosY == gem._gemPosY)
             {
                 gem.collected = true;
+                hasWon = true;
 
                 if (lastTurnWasX == true)
                 {
