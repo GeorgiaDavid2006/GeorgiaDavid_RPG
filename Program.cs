@@ -20,6 +20,8 @@ namespace GeorgiaDavid_RPG
         static Gold gold4 = new Gold(11, 2, 1);
         static Gold gold5 = new Gold(6, 4, 1);
 
+        static List<Gold> goldToSpawn = new List<Gold> { gold1, gold2, gold3, gold4, gold5 };
+
         static bool isGameActive = true;
 
         static void Main(string[] args)
@@ -28,11 +30,10 @@ namespace GeorgiaDavid_RPG
             ShowHUD();
             player.DrawPlayer();
             enemy1.DrawEnemy();
-            gold1.DrawGold();
-            gold2.DrawGold();
-            gold3.DrawGold();
-            gold4.DrawGold();
-            gold5.DrawGold();
+            foreach(Gold gold in goldToSpawn)
+            {
+                gold.DrawGold();
+            }
 
             while (isGameActive && enemy1._currentHealth > 0)
             {
