@@ -135,7 +135,6 @@ namespace GeorgiaDavid_RPG
             Console.WriteLine("Player Health: " + gameManager.player.playerHealthSystem._currentHealth);
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Gold = " + gameManager.player._amountOfGold);
-            
         }
     }
 }

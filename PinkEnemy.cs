@@ -8,9 +8,6 @@ namespace GeorgiaDavid_RPG
 {
     class PinkEnemy : Enemy
     {
-        public int _pinkEnemyPosX;
-        public int _pinkEnemyPosY;
-
         public int _posX;
         public int _posY;
 
@@ -21,10 +18,8 @@ namespace GeorgiaDavid_RPG
         public PinkEnemy(int posX, int posY, int attack)
             :base(8, 8, posX, posY, ConsoleColor.Magenta, attack)
         {
-            _pinkEnemyPosX = base._enemyPosX;
-            _pinkEnemyPosY = base._enemyPosY;
-
             _pink = base._color;
+
             _posX = posX;
             _posY = posY;
             _attack = attack;
@@ -37,6 +32,7 @@ namespace GeorgiaDavid_RPG
 
         public override void UpdateHealth(int amount)
         {
+            amount = _attack;
             base.UpdateHealth(amount);
         }
 

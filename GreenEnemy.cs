@@ -9,9 +9,6 @@ namespace GeorgiaDavid_RPG
 {
     class GreenEnemy : Enemy
     {
-        public int _greenEnemyPosX;
-        public int _greenEnemyPosY;
-
         public int _posX;
         public int _posY;
 
@@ -22,10 +19,8 @@ namespace GeorgiaDavid_RPG
         public GreenEnemy(int posX, int posY, int attack)
             : base(10, 10, posX, posY, ConsoleColor.Green, attack)
         {
-            _greenEnemyPosX = base._enemyPosX;
-            _greenEnemyPosY = base._enemyPosY;
-
             _green = base._color;
+
             _posX = posX;
             _posY = posY;
             _attack = attack;
@@ -38,6 +33,7 @@ namespace GeorgiaDavid_RPG
 
         public override void UpdateHealth(int amount)
         {
+            amount = _attack;
             base.UpdateHealth(amount);
         }
 

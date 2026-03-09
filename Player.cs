@@ -141,7 +141,7 @@ namespace GeorgiaDavid_RPG
             {
                 enemy.enemyHealthSystem.UpdateHealth(-1);
                 enemy._enemyPosX = 30;
-                enemy._enemyPosY = -1;
+                enemy._enemyPosY = 0;
 
                 if (lastTurnWasX == true)
                 {

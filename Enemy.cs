@@ -8,6 +8,8 @@ namespace GeorgiaDavid_RPG
 {
     class Enemy
     {
+        Map levelMap = new Map();
+
         public int _enemyPosX;
         public int _enemyPosY;
 
@@ -19,6 +21,11 @@ namespace GeorgiaDavid_RPG
         public int _maxHealth;
 
         public ConsoleColor _color;
+
+        private int _borderLeft = 0;
+        private int _borderDown = 11;
+        private int _borderUp = 0;
+        private int _borderRight = 29;
 
         public Enemy(int enemyMaxHealth, int enemyCurrentHealth, int enemyPosX, int enemyPosY, ConsoleColor color, int attackPower)
         {
@@ -47,26 +54,70 @@ namespace GeorgiaDavid_RPG
 
             if (_enemyPosX < player._currentPlayerPosX)
             {
-                _enemyPosX += 1;
-                player.isPlayersTurn = true;
+                if (_enemyPosX + 1 <= _borderRight)
+                {
+                    if (levelMap.map[_enemyPosY][_enemyPosX + 1] != '▓')
+                    {
+                        _enemyPosX = _enemyPosX + 1;
+                        player.isPlayersTurn = true;
+                    }
+                }
             }
            if (_enemyPosX > player._currentPlayerPosX)
-            {
-                _enemyPosX -= 1;
-                player.isPlayersTurn = true;
+            { 
+                if (_enemyPosX - 1 >= _borderLeft)
+                {
+                    if (levelMap.map[_enemyPosY][_enemyPosX - 1] != '▓')
+                    {
+                        _enemyPosX = _enemyPosX - 1;
+                        player.isPlayersTurn = true;
+                    }
+                }
             }
            if (_enemyPosY < player._currentPlayerPosY)
             {
-                _enemyPosY += 1;
-                player.isPlayersTurn = true;
+                if (_enemyPosY + 1 <= _borderDown)
+                {
+                    if (levelMap.map[_enemyPosY + 1][_enemyPosX] != '▓')
+                    {
+                        _enemyPosY = _enemyPosY + 1;
+                        player.isPlayersTurn = true;
+                    }
+                }
             }
            if (_enemyPosY > player._currentPlayerPosY)
             {
-                _enemyPosY -= 1;
-                player.isPlayersTurn = true;
+                if (_enemyPosY - 1 >= _borderUp)
+                {
+                    if (levelMap.map[_enemyPosY - 1][_enemyPosX] != '▓')
+                    {
+                        _enemyPosY = _enemyPosY - 1;
+                        player.isPlayersTurn = true;
+                    }
+                }
             }
 
-           if (_enemyPosX == player._currentPlayerPosX && _enemyPosY == player._currentPlayerPosY)
+            if (_enemyPosX < _borderLeft)
+            {
+                _enemyPosX = _borderLeft;
+            }
+
+            if (_enemyPosY < _borderUp)
+            {
+                _enemyPosY = _borderUp;
+            }
+
+            if (_enemyPosX > _borderRight)
+            {
+                _enemyPosX = _borderRight;
+            }
+
+            if (_enemyPosY > _borderDown)
+            {
+                _enemyPosY = _borderDown;
+            }
+
+            if (_enemyPosX == player._currentPlayerPosX && _enemyPosY == player._currentPlayerPosY)
             {
                 player.playerHealthSystem.UpdateHealth(_attackPower);
                 player._currentPlayerPosX = 0;
