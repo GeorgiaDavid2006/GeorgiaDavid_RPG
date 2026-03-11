@@ -22,9 +22,9 @@ namespace GeorgiaDavid_RPG
         private int _previousPlayerPosY;
 
         private int _borderLeft = 0;
-        private int _borderDown = 11;
+        private int _borderDown = 15;
         private int _borderUp = 0;
-        private int _borderRight = 29;
+        private int _borderRight = 59;
 
         public int _amountOfGold = 0;
 
