@@ -119,7 +119,7 @@ namespace GeorgiaDavid_RPG
 
             if (_enemyPosX == player._currentPlayerPosX && _enemyPosY == player._currentPlayerPosY)
             {
-                player.playerHealthSystem.UpdateHealth(_attackPower);
+                player.playerHealthSystem.UpdateHealth(-_attackPower);
                 player._currentPlayerPosX = 0;
                 player._currentPlayerPosY = 0;
             }

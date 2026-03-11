@@ -32,7 +32,6 @@ namespace GeorgiaDavid_RPG
 
         public override void UpdateHealth(int amount)
         {
-            amount = _attack;
             base.UpdateHealth(amount);
         }
 

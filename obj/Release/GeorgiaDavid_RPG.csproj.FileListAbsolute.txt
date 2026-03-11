@@ -6,3 +6,12 @@ C:\Users\georg\ProbuilderCity\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.cspr
 C:\Users\georg\ProbuilderCity\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.csproj.CoreCompileInputs.cache
 C:\Users\georg\ProbuilderCity\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.exe
 C:\Users\georg\ProbuilderCity\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.pdb
+C:\Users\W0512995\source\repos\GeorgiaDavid_RPG\GeorgiaDavid_RPG\bin\Release\Map.Txt
+C:\Users\W0512995\source\repos\GeorgiaDavid_RPG\GeorgiaDavid_RPG\bin\Release\GeorgiaDavid_RPG.exe.config
+C:\Users\W0512995\source\repos\GeorgiaDavid_RPG\GeorgiaDavid_RPG\bin\Release\GeorgiaDavid_RPG.exe
+C:\Users\W0512995\source\repos\GeorgiaDavid_RPG\GeorgiaDavid_RPG\bin\Release\GeorgiaDavid_RPG.pdb
+C:\Users\W0512995\source\repos\GeorgiaDavid_RPG\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.csproj.AssemblyReference.cache
+C:\Users\W0512995\source\repos\GeorgiaDavid_RPG\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.exe.config
+C:\Users\W0512995\source\repos\GeorgiaDavid_RPG\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.csproj.CoreCompileInputs.cache
+C:\Users\W0512995\source\repos\GeorgiaDavid_RPG\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.exe
+C:\Users\W0512995\source\repos\GeorgiaDavid_RPG\GeorgiaDavid_RPG\obj\Release\GeorgiaDavid_RPG.pdb
