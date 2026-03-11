@@ -15,11 +15,8 @@ namespace GeorgiaDavid_RPG
         {
             GameManager gameManager = new GameManager();
 
-            List<BlueEnemy> blueEnemies = new List<BlueEnemy> { gameManager.blueEnemy1, gameManager.blueEnemy2, gameManager.blueEnemy3 }; 
-
-            List<PinkEnemy> pinkEnemies = new List<PinkEnemy> { gameManager.pinkEnemy1, gameManager.pinkEnemy2 };
-
-            List<GreenEnemy> greenEnemies = new List<GreenEnemy> { gameManager.greenEnemy1, gameManager.greenEnemy2 };
+            List<Enemy> enemies = new List<Enemy> { gameManager.blueEnemy1, gameManager.blueEnemy2, gameManager.blueEnemy3, gameManager.pinkEnemy1, gameManager.pinkEnemy2,
+            gameManager.greenEnemy1, gameManager.greenEnemy2};
 
             List<Gold> goldToSpawn = new List<Gold> { gameManager.gold1, gameManager.gold2, gameManager.gold3, gameManager.gold4, gameManager.gold5 };
 
@@ -28,17 +25,9 @@ namespace GeorgiaDavid_RPG
             gameManager.levelMap.DrawMap();
             ShowHUD(gameManager);
             gameManager.player.DrawPlayer();
-            foreach(BlueEnemy blueEnemy in blueEnemies)
+            foreach(Enemy enemiesToSpawn in enemies)
             {
-                blueEnemy.DrawEnemy();
-            }
-            foreach(PinkEnemy pinkEnemy in pinkEnemies)
-            {
-                pinkEnemy.DrawEnemy();
-            }
-            foreach(GreenEnemy greenEnemy in greenEnemies) 
-            { 
-                greenEnemy.DrawEnemy(); 
+                enemiesToSpawn.DrawEnemy();
             }
             foreach(Gold gold in goldToSpawn)
             {
@@ -72,20 +61,9 @@ namespace GeorgiaDavid_RPG
                 gameManager.levelMap.DrawMap();
                 ShowHUD(gameManager);
                 gameManager.player.DrawPlayer();
-                foreach (BlueEnemy blueEnemy in blueEnemies)
+                foreach (Enemy enemiesToSpawn in enemies)
                 {
-                    blueEnemy.MoveEnemy(gameManager.player);
-                    blueEnemy.DrawEnemy();
-                }
-                foreach (PinkEnemy pinkEnemy in pinkEnemies)
-                {
-                    pinkEnemy.MoveEnemy(gameManager.player);
-                    pinkEnemy.DrawEnemy();
-                }
-                foreach (GreenEnemy greenEnemy in greenEnemies)
-                {
-                    greenEnemy.MoveEnemy(gameManager.player);
-                    greenEnemy.DrawEnemy();
+                    enemiesToSpawn.DrawEnemy();
                 }
                 foreach (Gold gold in goldToSpawn)
                 {
