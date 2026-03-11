@@ -47,7 +47,7 @@ namespace GeorgiaDavid_RPG
             _maxHealth = playerHealthSystem._maxHealth;
         }
 
-        public void PlayerInput(Enemy enemy)
+        public void PlayerInput(List<Enemy> enemies)
         {
             if (playerHealthSystem._currentHealth <= 0)
             {
@@ -137,11 +137,11 @@ namespace GeorgiaDavid_RPG
                 _currentPlayerPosY = _borderDown;
             }
 
-            if (_currentPlayerPosX == enemy._enemyPosX && _currentPlayerPosY == enemy._enemyPosY)
+            if (_currentPlayerPosX == enemies[_indexOfEnemies]._enemyPosX && _currentPlayerPosY == enemies[_indexOfEnemies]._enemyPosY)
             {
-                enemy.enemyHealthSystem.UpdateHealth(-1);
-                enemy._enemyPosX = 30;
-                enemy._enemyPosY = 0;
+                enemies[_indexOfEnemies].enemyHealthSystem.UpdateHealth(-1);
+                enemies[_indexOfEnemies]._enemyPosX = 30;
+                enemies[_indexOfEnemies]._enemyPosY = 0;
 
                 if (lastTurnWasX == true)
                 {

@@ -42,13 +42,7 @@ namespace GeorgiaDavid_RPG
             while (isGameActive && gameManager.player.hasWon == false)
             {
                 Console.SetCursorPosition(0, 0);
-                gameManager.player.PlayerInput(gameManager.blueEnemy1);
-                gameManager.player.PlayerInput(gameManager.blueEnemy2);
-                gameManager.player.PlayerInput(gameManager.blueEnemy3);
-                gameManager.player.PlayerInput(gameManager.pinkEnemy1);
-                gameManager.player.PlayerInput(gameManager.pinkEnemy2);
-                gameManager.player.PlayerInput(gameManager.greenEnemy1);
-                gameManager.player.PlayerInput(gameManager.greenEnemy2);
+                gameManager.player.PlayerInput(enemies);
                 gameManager.player.CollectGold(gameManager.gold1);
                 gameManager.player.CollectGold(gameManager.gold2);
                 gameManager.player.CollectGold(gameManager.gold3);
@@ -63,6 +57,7 @@ namespace GeorgiaDavid_RPG
                 gameManager.player.DrawPlayer();
                 foreach (Enemy enemiesToSpawn in enemies)
                 {
+                    enemiesToSpawn.MoveEnemy(gameManager.player);
                     enemiesToSpawn.DrawEnemy();
                 }
                 foreach (Gold gold in goldToSpawn)
@@ -80,14 +75,6 @@ namespace GeorgiaDavid_RPG
                 {
                     isGameActive = false;
                 }
-            }
-
-            if (!isGameActive)
-            {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Game Over!");
-                Console.ReadKey();
             }
 
             if (isGameActive == false)
