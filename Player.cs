@@ -28,8 +28,6 @@ namespace GeorgiaDavid_RPG
 
         public int _amountOfGold = 0;
 
-        public int _indexOfEnemies;
-
         ConsoleColor _color;
 
         public bool isPlayersTurn = true;
@@ -137,11 +135,11 @@ namespace GeorgiaDavid_RPG
                 _currentPlayerPosY = _borderDown;
             }
 
-            if (_currentPlayerPosX == enemies[_indexOfEnemies]._enemyPosX && _currentPlayerPosY == enemies[_indexOfEnemies]._enemyPosY)
+            if (_currentPlayerPosX == enemies[0]._enemyPosX && _currentPlayerPosY == enemies[0]._enemyPosY)
             {
-                enemies[_indexOfEnemies].enemyHealthSystem.UpdateHealth(-1);
-                enemies[_indexOfEnemies]._enemyPosX = 30;
-                enemies[_indexOfEnemies]._enemyPosY = 0;
+                enemies[0].enemyHealthSystem.UpdateHealth(-1);
+                enemies[0]._enemyPosX = 30;
+                enemies[0]._enemyPosY = 0;
 
                 if (lastTurnWasX == true)
                 {

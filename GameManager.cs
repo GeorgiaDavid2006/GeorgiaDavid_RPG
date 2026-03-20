@@ -31,6 +31,6 @@ namespace GeorgiaDavid_RPG
         public HealthItem healthItem2 = new HealthItem(2, 11, 1);
         public HealthItem healthItem3 = new HealthItem(8, 9, 1);
 
-        public Gem gem = new Gem(29, 11, ConsoleColor.Green);
+        public Gem gem = new Gem(59, 15, ConsoleColor.Green);
     }
 }

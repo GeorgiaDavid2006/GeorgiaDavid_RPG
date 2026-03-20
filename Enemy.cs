@@ -27,7 +27,7 @@ namespace GeorgiaDavid_RPG
         private int _borderUp = 0;
         private int _borderRight = 59;
 
-        public Enemy(int enemyMaxHealth, int enemyCurrentHealth, int enemyPosX, int enemyPosY, ConsoleColor color, int attackPower)
+        public Enemy(int enemyMaxHealth, int enemyCurrentHealth, int enemyPosX, int enemyPosY, ConsoleColor color, int attackPower, int enemyIndex)
         {
             _enemyPosX = enemyPosX;
             _enemyPosY = enemyPosY;
