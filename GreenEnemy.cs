@@ -11,7 +11,7 @@ namespace GeorgiaDavid_RPG
     {
         Map levelMap = new Map();
 
-        int turnNumber;
+        int turnNumber = 0;
 
         public int _posX;
         public int _posY;
