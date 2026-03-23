@@ -135,21 +135,34 @@ namespace GeorgiaDavid_RPG
                 _currentPlayerPosY = _borderDown;
             }
 
-            if (_currentPlayerPosX == enemies[0]._enemyPosX && _currentPlayerPosY == enemies[0]._enemyPosY)
-            {
-                enemies[0].enemyHealthSystem.UpdateHealth(-1);
-                enemies[0]._enemyPosX = 30;
-                enemies[0]._enemyPosY = 0;
+            bool canMoveToPosition = true;
 
+            foreach(Enemy enemy in enemies)
+            {
+                if (_currentPlayerPosX == enemy._enemyPosX && _currentPlayerPosY == enemy._enemyPosY)
+                {
+                    canMoveToPosition = false;
+                    enemy.enemyHealthSystem.UpdateHealth(-1);
+                    enemy._enemyPosX = 30;
+                    enemy._enemyPosY = 1;
+                    break;
+                }
+                
+            }
+
+            if (canMoveToPosition == false)
+            {
                 if (lastTurnWasX == true)
                 {
                     _currentPlayerPosX = _previousPlayerPosX;
                 }
+
                 else
                 {
                     _currentPlayerPosY = _previousPlayerPosY;
                 }
             }
+            
         }
 
         public void DrawPlayer()
