@@ -143,8 +143,8 @@ namespace GeorgiaDavid_RPG
                 {
                     canMoveToPosition = false;
                     enemy.enemyHealthSystem.UpdateHealth(-1);
-                    enemy._enemyPosX = 30;
-                    enemy._enemyPosY = 1;
+                    enemy._enemyPosX = 59;
+                    enemy._enemyPosY = 0;
                     break;
                 }
                 

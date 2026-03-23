@@ -9,6 +9,10 @@ namespace GeorgiaDavid_RPG
 {
     class GreenEnemy : Enemy
     {
+        Map levelMap = new Map();
+
+        int turnNumber;
+
         public int _posX;
         public int _posY;
 
@@ -28,8 +32,98 @@ namespace GeorgiaDavid_RPG
 
         public override void MoveEnemy(Player player)
         {
-            base.MoveEnemy(player);
+            if (player.isPlayersTurn == true)
+            {
+                return;
+            }
+
+            if (enemyHealthSystem._currentHealth <= 0)
+            {
+                return;
+            }
+
+            turnNumber += 1;
+
+            bool isEven = (turnNumber % 2 == 0);
+
+            if (!isEven)
+            {
+                return;
+            }
+
+            if (_enemyPosX < player._currentPlayerPosX)
+            {
+                if (_enemyPosX + 1 <= _borderRight)
+                {
+                    if (levelMap.map[_enemyPosY][_enemyPosX + 1] != '▓')
+                    {
+                        _enemyPosX = _enemyPosX + 1;
+                        player.isPlayersTurn = true;
+                    }
+                }
+            }
+            if (_enemyPosX > player._currentPlayerPosX)
+            {
+                if (_enemyPosX - 1 >= _borderLeft)
+                {
+                    if (levelMap.map[_enemyPosY][_enemyPosX - 1] != '▓')
+                    {
+                        _enemyPosX = _enemyPosX - 1;
+                        player.isPlayersTurn = true;
+                    }
+                }
+            }
+            if (_enemyPosY < player._currentPlayerPosY)
+            {
+                if (_enemyPosY + 1 <= _borderDown)
+                {
+                    if (levelMap.map[_enemyPosY + 1][_enemyPosX] != '▓')
+                    {
+                        _enemyPosY = _enemyPosY + 1;
+                        player.isPlayersTurn = true;
+                    }
+                }
+            }
+            if (_enemyPosY > player._currentPlayerPosY)
+            {
+                if (_enemyPosY - 1 >= _borderUp)
+                {
+                    if (levelMap.map[_enemyPosY - 1][_enemyPosX] != '▓')
+                    {
+                        _enemyPosY = _enemyPosY - 1;
+                        player.isPlayersTurn = true;
+                    }
+                }
+            }
+
+            if (_enemyPosX < _borderLeft)
+            {
+                _enemyPosX = _borderLeft;
+            }
+
+            if (_enemyPosY < _borderUp)
+            {
+                _enemyPosY = _borderUp;
+            }
+
+            if (_enemyPosX > _borderRight)
+            {
+                _enemyPosX = _borderRight;
+            }
+
+            if (_enemyPosY > _borderDown)
+            {
+                _enemyPosY = _borderDown;
+            }
+
+            if (_enemyPosX == player._currentPlayerPosX && _enemyPosY == player._currentPlayerPosY)
+            {
+                player.playerHealthSystem.UpdateHealth(-_attackPower);
+                player._currentPlayerPosX = 0;
+                player._currentPlayerPosY = 0;
+            }
         }
+        
 
         public override void UpdateHealth(int amount)
         {
