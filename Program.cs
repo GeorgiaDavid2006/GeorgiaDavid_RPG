@@ -15,34 +15,32 @@ namespace GeorgiaDavid_RPG
         {
             GameManager gameManager = new GameManager();
 
-            List<Enemy> enemies = new List<Enemy> { gameManager.blueEnemy1, gameManager.blueEnemy2, gameManager.blueEnemy3, gameManager.pinkEnemy1, gameManager.pinkEnemy2,
+            EnemyManager enemyManager = new EnemyManager();
+
+            ItemManager itemManager = new ItemManager();
+
+            enemyManager.enemies = new List<Enemy>{ gameManager.blueEnemy1, gameManager.blueEnemy2, gameManager.blueEnemy3, gameManager.pinkEnemy1, gameManager.pinkEnemy2, 
             gameManager.greenEnemy1, gameManager.greenEnemy2};
 
-            List<Gold> goldToSpawn = new List<Gold> { gameManager.gold1, gameManager.gold2, gameManager.gold3, gameManager.gold4, gameManager.gold5 };
-
-            List<HealthItem> healthItemsToSpawn = new List<HealthItem> { gameManager.healthItem1, gameManager.healthItem2, gameManager.healthItem3 };
+            itemManager.items = new List<Item> { gameManager.gold1, gameManager.gold2, gameManager.gold3, gameManager.gold4, gameManager.gold5, gameManager.healthItem1, gameManager.healthItem2, 
+            gameManager.healthItem3, gameManager.gem};
 
             gameManager.levelMap.DrawMap();
             ShowHUD(gameManager);
             gameManager.player.DrawPlayer();
-            foreach(Enemy enemiesToSpawn in enemies)
+            foreach(Enemy enemiesToSpawn in enemyManager.enemies)
             {
                 enemiesToSpawn.DrawEnemy();
             }
-            foreach(Gold gold in goldToSpawn)
+            foreach(Item item in itemManager.items)
             {
-                gold.DrawItem();
+                item.DrawItem();
             }
-            foreach(HealthItem healthItem in healthItemsToSpawn)
-            {
-                healthItem.DrawItem();
-            }
-            gameManager.gem.DrawItem();
 
             while (isGameActive && gameManager.player.hasWon == false)
             {
                 Console.SetCursorPosition(0, 0);
-                gameManager.player.PlayerInput(enemies);
+                gameManager.player.PlayerInput(enemyManager.enemies);
                 gameManager.gold1.CollectGold(gameManager.player);
                 gameManager.gold2.CollectGold(gameManager.player);
                 gameManager.gold3.CollectGold(gameManager.player);
@@ -55,20 +53,15 @@ namespace GeorgiaDavid_RPG
                 gameManager.levelMap.DrawMap();
                 ShowHUD(gameManager);
                 gameManager.player.DrawPlayer();
-                foreach (Enemy enemiesToSpawn in enemies)
+                foreach (Enemy enemiesToSpawn in enemyManager.enemies)
                 {
                     enemiesToSpawn.MoveEnemy(gameManager.player);
                     enemiesToSpawn.DrawEnemy();
                 }
-                foreach (Gold gold in goldToSpawn)
+                foreach (Item item in itemManager.items)
                 {
-                    gold.DrawItem();
+                    item.DrawItem();
                 }
-                foreach (HealthItem healthItem in healthItemsToSpawn)
-                {
-                    healthItem.DrawItem();
-                }
-                gameManager.gem.DrawItem();
                 Thread.Sleep(100);
 
                 if (gameManager.player.playerHealthSystem._currentHealth <= 0)

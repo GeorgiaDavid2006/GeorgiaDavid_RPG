@@ -8,6 +8,6 @@ namespace GeorgiaDavid_RPG
 {
     class EnemyManager
     {
-
+        public List<Enemy> enemies;
     }
 }

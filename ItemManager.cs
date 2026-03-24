@@ -8,6 +8,6 @@ namespace GeorgiaDavid_RPG
 {
     class ItemManager
     {
-
+        public List<Item> items;
     }
 }
