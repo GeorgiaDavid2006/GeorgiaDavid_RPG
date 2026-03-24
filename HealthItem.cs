@@ -6,40 +6,58 @@ using System.Threading.Tasks;
 
 namespace GeorgiaDavid_RPG
 {
-    class HealthItem
+    class HealthItem : Item
     {
         public int _healthItemPosX;
         public int _healthItemPosY;
         public int _healthValue;
 
-        public bool collected = false;
+        ConsoleColor _healthColor;
+
+        public string _healthSprite;
 
         public HealthItem(int healthItemPosX, int healthItemPosY, int healthValue)
+            :base (healthItemPosX, healthItemPosY, ConsoleColor.Magenta, "+")
         {
             _healthItemPosX = healthItemPosX;
             _healthItemPosY = healthItemPosY;
             _healthValue = healthValue;
+
+            _healthColor = base._color;
+            _healthSprite = base._sprite;
         }
 
-        public void OnCollected()
+        public override void OnCollected()
         {
-            if (collected == true)
+            if (base.collected == true)
             {
                 _healthValue = 0;
             }
         }
 
-        public void DrawHealthItem()
+        public override void DrawItem()
         {
-            if (collected == true)
-            {
-                return;
-            }
+            base.DrawItem();
+        }
 
-            Console.CursorVisible = false;
-            Console.SetCursorPosition(_healthItemPosX + 1, _healthItemPosY + 1);
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("+");
+        public void CollectHealthItem(Player player)
+        {
+            if (player._currentPlayerPosX == _healthItemPosX && player._currentPlayerPosY == _healthItemPosY)
+            {
+                player.playerHealthSystem.UpdateHealth(_healthValue);
+                base.collected = true;
+
+                if (player.lastTurnWasX == true && _healthValue > 0)
+                {
+                    player._currentPlayerPosX = player._previousPlayerPosX;
+                    OnCollected();
+                }
+                else if (player.lastTurnWasX == false && _healthValue > 0)
+                {
+                    player._currentPlayerPosY = player._previousPlayerPosY;
+                    OnCollected();
+                }
+            }
         }
     }
 }

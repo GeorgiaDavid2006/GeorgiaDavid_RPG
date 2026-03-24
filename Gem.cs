@@ -6,34 +6,47 @@ using System.Threading.Tasks;
 
 namespace GeorgiaDavid_RPG
 {
-    class Gem
+    class Gem : Item
     {
         public int _gemPosX;
         public int _gemPosY;
 
-        ConsoleColor _color;
+        ConsoleColor _gemColor;
 
-        public bool collected = false;
+        public string _gemSprite;
 
-        public Gem(int gemPosX, int gemPosY, ConsoleColor consoleColor)
+        public Gem(int gemPosX, int gemPosY)
+            :base (gemPosX, gemPosY, ConsoleColor.Green, "*")
+            
         {
             _gemPosX = gemPosX;
             _gemPosY = gemPosY;
 
-            _color = consoleColor;
+            _gemColor = base._color;
+            _gemSprite = base._sprite;
         }
 
-        public void DrawGem()
+        public override void DrawItem()
         {
-            if (collected == true)
-            {
-                return;
-            }
+            base.DrawItem();
+        }
 
-            Console.CursorVisible = false;
-            Console.SetCursorPosition(_gemPosX + 1, _gemPosY + 1);
-            Console.ForegroundColor = _color;
-            Console.WriteLine("*");
+        public void CollectGem(Player player)
+        {
+            if (player._currentPlayerPosX == _gemPosX && player._currentPlayerPosY == _gemPosY)
+            {
+                base.collected = true;
+                player.hasWon = true;
+
+                if (player.lastTurnWasX == true)
+                {
+                    player._currentPlayerPosX = player._previousPlayerPosX;
+                }
+                else if (player.lastTurnWasX == false)
+                {
+                    player._currentPlayerPosY = player._previousPlayerPosY;
+                }
+            }
         }
     }
 }

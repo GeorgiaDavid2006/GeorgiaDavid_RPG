@@ -18,8 +18,8 @@ namespace GeorgiaDavid_RPG
         public int _currentPlayerPosX;
         public int _currentPlayerPosY;
 
-        private int _previousPlayerPosX;
-        private int _previousPlayerPosY;
+        public int _previousPlayerPosX;
+        public int _previousPlayerPosY;
 
         private int _borderLeft = 0;
         private int _borderDown = 15;
@@ -31,7 +31,7 @@ namespace GeorgiaDavid_RPG
         ConsoleColor _color;
 
         public bool isPlayersTurn = true;
-        private bool lastTurnWasX = false;
+        public bool lastTurnWasX = false;
         public bool hasWon = false;
 
         public Player(int playerMaxHealth, int playerCurrentHealth, int playerPosX, int playerPosY, ConsoleColor color)
@@ -176,64 +176,6 @@ namespace GeorgiaDavid_RPG
             Console.SetCursorPosition(_currentPlayerPosX + 1, _currentPlayerPosY + 1);
             Console.ForegroundColor = _color;
             Console.WriteLine("O");
-        }
-
-        public void CollectGold(Gold gold)
-        {
-            if (_currentPlayerPosX == gold._goldPosX && _currentPlayerPosY == gold._goldPosY)
-            {
-                _amountOfGold = _amountOfGold + gold._goldValue;
-                gold.collected = true;
-
-                if (lastTurnWasX == true && gold._goldValue > 0)
-                {
-                    _currentPlayerPosX = _previousPlayerPosX;
-                    gold.OnCollected();
-                }
-                else if (lastTurnWasX == false && gold._goldValue > 0)
-                {
-                    _currentPlayerPosY = _previousPlayerPosY;
-                    gold.OnCollected();
-                }
-            }
-        }
-
-        public void CollectHealthItem(HealthItem healthItem)
-        {
-            if (_currentPlayerPosX == healthItem._healthItemPosX && _currentPlayerPosY == healthItem._healthItemPosY)
-            {
-                playerHealthSystem.UpdateHealth(healthItem._healthValue);
-                healthItem.collected = true;
-
-                if (lastTurnWasX == true && healthItem._healthValue > 0)
-                {
-                    _currentPlayerPosX = _previousPlayerPosX;
-                    healthItem.OnCollected();
-                }
-                else if (lastTurnWasX == false && healthItem._healthValue > 0)
-                {
-                    _currentPlayerPosY = _previousPlayerPosY;
-                    healthItem.OnCollected();
-                }
-            }
-        }
-
-        public void CollectGem(Gem gem)
-        {
-            if (_currentPlayerPosX == gem._gemPosX && _currentPlayerPosY == gem._gemPosY)
-            {
-                gem.collected = true;
-                hasWon = true;
-
-                if (lastTurnWasX == true)
-                {
-                    _currentPlayerPosX = _previousPlayerPosX;
-                }
-                else if (lastTurnWasX == false)
-                {
-                    _currentPlayerPosY = _previousPlayerPosY;
-                }
-            }
         }
     }
 }
