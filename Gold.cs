@@ -41,7 +41,7 @@ namespace GeorgiaDavid_RPG
             base.DrawItem();
         }
 
-        public void CollectGold(Player player)
+        public override void CollectItem(Player player)
         {
             if (_goldPosX == player._currentPlayerPosX && _goldPosY == player._currentPlayerPosY)
             {

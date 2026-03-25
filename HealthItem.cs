@@ -40,7 +40,7 @@ namespace GeorgiaDavid_RPG
             base.DrawItem();
         }
 
-        public void CollectHealthItem(Player player)
+        public override void CollectItem(Player player)
         {
             if (player._currentPlayerPosX == _healthItemPosX && player._currentPlayerPosY == _healthItemPosY)
             {

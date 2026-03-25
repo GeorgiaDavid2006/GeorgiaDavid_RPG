@@ -35,7 +35,7 @@ namespace GeorgiaDavid_RPG
             base.DrawItem();
         }
 
-        public void ReadSign(Player player)
+        public override void CollectItem(Player player)
         {
             if (wasRead == true)
             {

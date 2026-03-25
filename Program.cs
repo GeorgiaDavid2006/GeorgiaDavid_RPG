@@ -46,36 +46,10 @@ namespace GeorgiaDavid_RPG
             {
                 Console.SetCursorPosition(0, 0);
                 gameManager.player.PlayerInput(enemyManager.enemies);
-                gameManager.gold1.CollectGold(gameManager.player);
-                gameManager.gold2.CollectGold(gameManager.player);
-                gameManager.gold3.CollectGold(gameManager.player);
-                gameManager.gold4.CollectGold(gameManager.player);
-                gameManager.gold5.CollectGold(gameManager.player);
-                gameManager.gold6.CollectGold(gameManager.player);
-                gameManager.gold7.CollectGold(gameManager.player);
-                gameManager.gold8.CollectGold(gameManager.player);
-                gameManager.gold9.CollectGold(gameManager.player);
-                gameManager.gold10.CollectGold(gameManager.player);
-                gameManager.gold11.CollectGold(gameManager.player);
-                gameManager.gold12.CollectGold(gameManager.player);
-                gameManager.gold13.CollectGold(gameManager.player);
-                gameManager.gold14.CollectGold(gameManager.player);
-                gameManager.gold15.CollectGold(gameManager.player);
-                gameManager.gold16.CollectGold(gameManager.player);
-                gameManager.gold17.CollectGold(gameManager.player);
-                gameManager.gold18.CollectGold(gameManager.player);
-                gameManager.gold19.CollectGold(gameManager.player);
-                gameManager.gold20.CollectGold(gameManager.player);
-                gameManager.gold21.CollectGold(gameManager.player);
-                gameManager.gold22.CollectGold(gameManager.player);
-                gameManager.gold23.CollectGold(gameManager.player);
-                gameManager.gold24.CollectGold(gameManager.player);
-                gameManager.gold25.CollectGold(gameManager.player);
-                gameManager.healthItem1.CollectHealthItem(gameManager.player);
-                gameManager.healthItem2.CollectHealthItem(gameManager.player);
-                gameManager.healthItem3.CollectHealthItem(gameManager.player);
-                gameManager.gem.CollectGem(gameManager.player);
-                gameManager.sign.ReadSign(gameManager.player);
+                foreach(Item item in itemManager.items)
+                {
+                    item.CollectItem(gameManager.player);
+                }
                 gameManager.levelMap.DrawMap();
                 ShowHUD(gameManager);
                 gameManager.player.DrawPlayer();

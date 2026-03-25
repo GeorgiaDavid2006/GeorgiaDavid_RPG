@@ -42,5 +42,10 @@ namespace GeorgiaDavid_RPG
             Console.ForegroundColor = _color;
             Console.WriteLine(_sprite);
         }
+
+        public virtual void CollectItem(Player player)
+        {
+
+        }
     }
 }
