@@ -20,9 +20,9 @@ namespace GeorgiaDavid_RPG
             ItemManager itemManager = new ItemManager();
 
             enemyManager.enemies = new List<Enemy>{ gameManager.blueEnemy1, gameManager.blueEnemy2, gameManager.blueEnemy3, gameManager.blueEnemy4, gameManager.blueEnemy5, gameManager.blueEnemy6,
-            gameManager.blueEnemy7, gameManager.blueEnemy8, gameManager.blueEnemy9, gameManager.blueEnemy10, gameManager.blueEnemy11, gameManager.blueEnemy12, gameManager.blueEnemy13, gameManager.blueEnemy14, 
-            gameManager.blueEnemy15, gameManager.blueEnemy16, gameManager.blueEnemy17, gameManager.blueEnemy18, gameManager.blueEnemy19, gameManager.blueEnemy20, gameManager.blueEnemy21, 
-            gameManager.blueEnemy22, gameManager.blueEnemy23, gameManager.blueEnemy24, gameManager.blueEnemy25, gameManager.pinkEnemy1, gameManager.pinkEnemy2, gameManager.pinkEnemy3, gameManager.pinkEnemy4, 
+            gameManager.blueEnemy7, gameManager.blueEnemy8, gameManager.blueEnemy9, gameManager.blueEnemy10, gameManager.blueEnemy11, gameManager.blueEnemy12, gameManager.blueEnemy13, gameManager.blueEnemy14,
+            gameManager.blueEnemy15, gameManager.blueEnemy16, gameManager.blueEnemy17, gameManager.blueEnemy18, gameManager.blueEnemy19, gameManager.blueEnemy20, gameManager.blueEnemy21,
+            gameManager.blueEnemy22, gameManager.blueEnemy23, gameManager.blueEnemy24, gameManager.blueEnemy25, gameManager.pinkEnemy1, gameManager.pinkEnemy2, gameManager.pinkEnemy3, gameManager.pinkEnemy4,
             gameManager.pinkEnemy5, gameManager.greenEnemy1, gameManager.greenEnemy2, gameManager.greenEnemy3};
 
             itemManager.items = new List<Item> { gameManager.gold1, gameManager.gold2, gameManager.gold3, gameManager.gold4, gameManager.gold5, gameManager.gold6, gameManager.gold7, gameManager.gold8,
@@ -58,6 +58,7 @@ namespace GeorgiaDavid_RPG
                     enemiesToSpawn.MoveEnemy(gameManager.player);
                     enemiesToSpawn.DrawEnemy();
                 }
+                gameManager.player.isPlayersTurn = true;
                 foreach (Item item in itemManager.items)
                 {
                     item.DrawItem();

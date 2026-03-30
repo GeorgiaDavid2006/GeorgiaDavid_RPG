@@ -42,7 +42,6 @@ namespace GeorgiaDavid_RPG
                 if (_enemyPosX + 1 <= _borderRight)
                 {
                     _enemyPosX = _enemyPosX + 1;
-                    player.isPlayersTurn = true;
                 }
             }
             if (_enemyPosX > player._currentPlayerPosX)
@@ -50,7 +49,6 @@ namespace GeorgiaDavid_RPG
                 if (_enemyPosX - 1 >= _borderLeft)
                 {
                     _enemyPosX = _enemyPosX - 1;
-                    player.isPlayersTurn = true;
                 }
             }
             if (_enemyPosY < player._currentPlayerPosY)
@@ -58,7 +56,6 @@ namespace GeorgiaDavid_RPG
                 if (_enemyPosY + 1 <= _borderDown)
                 {
                     _enemyPosY = _enemyPosY + 1;
-                    player.isPlayersTurn = true;
                 }
             }
             if (_enemyPosY > player._currentPlayerPosY)
@@ -66,7 +63,6 @@ namespace GeorgiaDavid_RPG
                 if (_enemyPosY - 1 >= _borderUp)
                 {
                     _enemyPosY = _enemyPosY - 1;
-                    player.isPlayersTurn = true;
                 }
             }
 
