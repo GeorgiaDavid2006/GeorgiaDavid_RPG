@@ -15,8 +15,8 @@ namespace GeorgiaDavid_RPG
         public BlueEnemy blueEnemy2 = new BlueEnemy(6, 8, 1);
         public BlueEnemy blueEnemy3 = new BlueEnemy(4, 3, 1);
         public BlueEnemy blueEnemy4 = new BlueEnemy(8, 10, 1);
-        public BlueEnemy blueEnemy5 = new BlueEnemy(3, 11, 1);
-        public BlueEnemy blueEnemy6 = new BlueEnemy(2, 7, 1);
+        public BlueEnemy blueEnemy5 = new BlueEnemy(51, 15, 1);
+        public BlueEnemy blueEnemy6 = new BlueEnemy(51, 12, 1);
         public BlueEnemy blueEnemy7 = new BlueEnemy(5, 15, 1);
         public BlueEnemy blueEnemy8 = new BlueEnemy(11, 6, 1);
         public BlueEnemy blueEnemy9 = new BlueEnemy(14, 12, 1);
