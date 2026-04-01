@@ -33,6 +33,7 @@ namespace GeorgiaDavid_RPG
         public bool isPlayersTurn = true;
         public bool lastTurnWasX = false;
         public bool hasWon = false;
+        public bool hasKey = false;
 
         public Player(int playerMaxHealth, int playerCurrentHealth, int playerPosX, int playerPosY, ConsoleColor color)
         {

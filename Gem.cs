@@ -16,8 +16,7 @@ namespace GeorgiaDavid_RPG
         public string _gemSprite;
 
         public Gem(int gemPosX, int gemPosY)
-            :base (gemPosX, gemPosY, ConsoleColor.Green, "*")
-            
+            :base (gemPosX, gemPosY, ConsoleColor.Green, "*")    
         {
             _gemPosX = gemPosX;
             _gemPosY = gemPosY;
