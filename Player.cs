@@ -60,58 +60,120 @@ namespace GeorgiaDavid_RPG
 
             ConsoleKeyInfo inputKey = Console.ReadKey(true);
 
-            if (inputKey.Key == ConsoleKey.A)
+            if (hasKey == false)
             {
-                _previousPlayerPosX = _currentPlayerPosX;
-                lastTurnWasX = true;
-                if (_currentPlayerPosX - 1 >= _borderLeft)
+                if (inputKey.Key == ConsoleKey.A)
                 {
-                    if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX - 1] != '▓' && levelMap.map[_currentPlayerPosY][_currentPlayerPosX - 1] != '█')
+                    _previousPlayerPosX = _currentPlayerPosX;
+                    lastTurnWasX = true;
+                    if (_currentPlayerPosX - 1 >= _borderLeft)
                     {
-                        _currentPlayerPosX = _currentPlayerPosX - 1;
-                        isPlayersTurn = false;
+                        if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX - 1] != '▓' && levelMap.map[_currentPlayerPosY][_currentPlayerPosX - 1] != '█')
+                        {
+                            _currentPlayerPosX = _currentPlayerPosX - 1;
+                            isPlayersTurn = false;
+                        }
                     }
                 }
-            }
 
-            if (inputKey.Key == ConsoleKey.D)
-            {
-                _previousPlayerPosX = _currentPlayerPosX;
-                lastTurnWasX = true;
-                if (_currentPlayerPosX + 1 <= _borderRight)
+                if (inputKey.Key == ConsoleKey.D)
                 {
-                    if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX + 1] != '▓' && levelMap.map[_currentPlayerPosY][_currentPlayerPosX + 1] != '█')
+                    _previousPlayerPosX = _currentPlayerPosX;
+                    lastTurnWasX = true;
+                    if (_currentPlayerPosX + 1 <= _borderRight)
                     {
-                        _currentPlayerPosX = _currentPlayerPosX + 1;
-                        isPlayersTurn = false;
+                        if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX + 1] != '▓' && levelMap.map[_currentPlayerPosY][_currentPlayerPosX + 1] != '█')
+                        {
+                            _currentPlayerPosX = _currentPlayerPosX + 1;
+                            isPlayersTurn = false;
+                        }
                     }
                 }
-            }
 
-            if (inputKey.Key == ConsoleKey.W)
-            {
-                _previousPlayerPosY = _currentPlayerPosY;
-                lastTurnWasX = false;
-                if (_currentPlayerPosY - 1 >= _borderUp)
+                if (inputKey.Key == ConsoleKey.W)
                 {
-                    if (levelMap.map[_currentPlayerPosY - 1][_currentPlayerPosX] != '▓' && levelMap.map[_currentPlayerPosY - 1][_currentPlayerPosX] != '█')
+                    _previousPlayerPosY = _currentPlayerPosY;
+                    lastTurnWasX = false;
+                    if (_currentPlayerPosY - 1 >= _borderUp)
                     {
-                        _currentPlayerPosY = _currentPlayerPosY - 1;
-                        isPlayersTurn = false;
+                        if (levelMap.map[_currentPlayerPosY - 1][_currentPlayerPosX] != '▓' && levelMap.map[_currentPlayerPosY - 1][_currentPlayerPosX] != '█')
+                        {
+                            _currentPlayerPosY = _currentPlayerPosY - 1;
+                            isPlayersTurn = false;
+                        }
                     }
                 }
-            }
 
-            if (inputKey.Key == ConsoleKey.S)
-            {
-                _previousPlayerPosY = _currentPlayerPosY;
-                lastTurnWasX = false;
-                if (_currentPlayerPosY + 1 <= _borderDown)
+                if (inputKey.Key == ConsoleKey.S)
                 {
-                    if (levelMap.map[_currentPlayerPosY + 1][_currentPlayerPosX] != '▓' && levelMap.map[_currentPlayerPosY + 1][_currentPlayerPosX] != '█')
+                    _previousPlayerPosY = _currentPlayerPosY;
+                    lastTurnWasX = false;
+                    if (_currentPlayerPosY + 1 <= _borderDown)
                     {
-                        _currentPlayerPosY = _currentPlayerPosY + 1;
-                        isPlayersTurn = false;
+                        if (levelMap.map[_currentPlayerPosY + 1][_currentPlayerPosX] != '▓' && levelMap.map[_currentPlayerPosY + 1][_currentPlayerPosX] != '█')
+                        {
+                            _currentPlayerPosY = _currentPlayerPosY + 1;
+                            isPlayersTurn = false;
+                        }
+                    }
+                }
+
+                else if (hasKey == true)
+                {
+                    if (inputKey.Key == ConsoleKey.A)
+                    {
+                        _previousPlayerPosX = _currentPlayerPosX;
+                        lastTurnWasX = true;
+                        if (_currentPlayerPosX - 1 >= _borderLeft)
+                        {
+                            if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX - 1] != '▓')
+                            {
+                                _currentPlayerPosX = _currentPlayerPosX - 1;
+                                isPlayersTurn = false;
+                            }
+                        }
+                    }
+
+                    if (inputKey.Key == ConsoleKey.D)
+                    {
+                        _previousPlayerPosX = _currentPlayerPosX;
+                        lastTurnWasX = true;
+                        if (_currentPlayerPosX + 1 <= _borderRight)
+                        {
+                            if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX + 1] != '▓')
+                            {
+                                _currentPlayerPosX = _currentPlayerPosX + 1;
+                                isPlayersTurn = false;
+                            }
+                        }
+                    }
+
+                    if (inputKey.Key == ConsoleKey.W)
+                    {
+                        _previousPlayerPosY = _currentPlayerPosY;
+                        lastTurnWasX = false;
+                        if (_currentPlayerPosY - 1 >= _borderUp)
+                        {
+                            if (levelMap.map[_currentPlayerPosY - 1][_currentPlayerPosX] != '▓')
+                            {
+                                _currentPlayerPosY = _currentPlayerPosY - 1;
+                                isPlayersTurn = false;
+                            }
+                        }
+                    }
+
+                    if (inputKey.Key == ConsoleKey.S)
+                    {
+                        _previousPlayerPosY = _currentPlayerPosY;
+                        lastTurnWasX = false;
+                        if (_currentPlayerPosY + 1 <= _borderDown)
+                        {
+                            if (levelMap.map[_currentPlayerPosY + 1][_currentPlayerPosX] != '▓')
+                            {
+                                _currentPlayerPosY = _currentPlayerPosY + 1;
+                                isPlayersTurn = false;
+                            }
+                        }
                     }
                 }
             }
