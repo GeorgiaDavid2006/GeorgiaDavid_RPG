@@ -33,36 +33,36 @@ namespace GeorgiaDavid_RPG
             gameManager.levelMap.DrawMap();
             ShowHUD(gameManager);
             gameManager.player.DrawPlayer();
-            foreach(Enemy enemiesToSpawn in enemyManager.enemies)
-            {
-                enemiesToSpawn.DrawEnemy();
-            }
-            foreach(Item item in itemManager.items)
-            {
-                item.DrawItem();
-            }
+            //foreach(Enemy enemiesToSpawn in enemyManager.enemies)
+            //{
+            //    enemiesToSpawn.DrawEnemy();
+            //}
+            //foreach(Item item in itemManager.items)
+            //{
+            //    item.DrawItem();
+            //}
 
             while (isGameActive && gameManager.player.hasWon == false)
             {
                 Console.SetCursorPosition(0, 0);
                 gameManager.player.PlayerInput(enemyManager.enemies);
-                foreach(Item item in itemManager.items)
-                {
-                    item.CollectItem(gameManager.player);
-                }
+                //foreach(Item item in itemManager.items)
+                //{
+                //    item.CollectItem(gameManager.player);
+                //}
                 gameManager.levelMap.DrawMap();
                 ShowHUD(gameManager);
                 gameManager.player.DrawPlayer();
-                foreach (Enemy enemiesToSpawn in enemyManager.enemies)
-                {
-                    enemiesToSpawn.MoveEnemy(gameManager.player);
-                    enemiesToSpawn.DrawEnemy();
-                }
+                //foreach (Enemy enemiesToSpawn in enemyManager.enemies)
+                //{
+                //    enemiesToSpawn.MoveEnemy(gameManager.player);
+                //    enemiesToSpawn.DrawEnemy();
+                //}
                 gameManager.player.isPlayersTurn = true;
-                foreach (Item item in itemManager.items)
-                {
-                    item.DrawItem();
-                }
+                //foreach (Item item in itemManager.items)
+                //{
+                //    item.DrawItem();
+                //}
                 Thread.Sleep(100);
 
                 if (gameManager.player.playerHealthSystem._currentHealth <= 0)
