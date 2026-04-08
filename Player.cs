@@ -70,8 +70,10 @@ namespace GeorgiaDavid_RPG
                     {
                         if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX - 1] != '▓' && levelMap.map[_currentPlayerPosY][_currentPlayerPosX - 1] != '█')
                         {
+                            DrawPreviousTile();
                             _currentPlayerPosX = _currentPlayerPosX - 1;
                             isPlayersTurn = false;
+                            DrawPlayer();
                         }
                     }
                 }
@@ -84,8 +86,10 @@ namespace GeorgiaDavid_RPG
                     {
                         if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX + 1] != '▓' && levelMap.map[_currentPlayerPosY][_currentPlayerPosX + 1] != '█')
                         {
+                            DrawPreviousTile();
                             _currentPlayerPosX = _currentPlayerPosX + 1;
                             isPlayersTurn = false;
+                            DrawPlayer();
                         }
                     }
                 }
@@ -98,8 +102,10 @@ namespace GeorgiaDavid_RPG
                     {
                         if (levelMap.map[_currentPlayerPosY - 1][_currentPlayerPosX] != '▓' && levelMap.map[_currentPlayerPosY - 1][_currentPlayerPosX] != '█')
                         {
+                            DrawPreviousTile();
                             _currentPlayerPosY = _currentPlayerPosY - 1;
                             isPlayersTurn = false;
+                            DrawPlayer();
                         }
                     }
                 }
@@ -112,8 +118,10 @@ namespace GeorgiaDavid_RPG
                     {
                         if (levelMap.map[_currentPlayerPosY + 1][_currentPlayerPosX] != '▓' && levelMap.map[_currentPlayerPosY + 1][_currentPlayerPosX] != '█')
                         {
+                            DrawPreviousTile();
                             _currentPlayerPosY = _currentPlayerPosY + 1;
                             isPlayersTurn = false;
+                            DrawPlayer();
                         }
                     }
                 }
@@ -128,8 +136,10 @@ namespace GeorgiaDavid_RPG
                         {
                             if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX - 1] != '▓')
                             {
+                                DrawPreviousTile();
                                 _currentPlayerPosX = _currentPlayerPosX - 1;
                                 isPlayersTurn = false;
+                                DrawPlayer();
                             }
                         }
                     }
@@ -142,8 +152,10 @@ namespace GeorgiaDavid_RPG
                         {
                             if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX + 1] != '▓')
                             {
+                                DrawPreviousTile();
                                 _currentPlayerPosX = _currentPlayerPosX + 1;
                                 isPlayersTurn = false;
+                                DrawPlayer();
                             }
                         }
                     }
@@ -156,8 +168,10 @@ namespace GeorgiaDavid_RPG
                         {
                             if (levelMap.map[_currentPlayerPosY - 1][_currentPlayerPosX] != '▓')
                             {
+                                DrawPreviousTile();
                                 _currentPlayerPosY = _currentPlayerPosY - 1;
                                 isPlayersTurn = false;
+                                DrawPlayer();
                             }
                         }
                     }
@@ -170,8 +184,10 @@ namespace GeorgiaDavid_RPG
                         {
                             if (levelMap.map[_currentPlayerPosY + 1][_currentPlayerPosX] != '▓')
                             {
+                                DrawPreviousTile();
                                 _currentPlayerPosY = _currentPlayerPosY + 1;
                                 isPlayersTurn = false;
+                                DrawPlayer();
                             }
                         }
                     }
@@ -239,6 +255,13 @@ namespace GeorgiaDavid_RPG
             Console.SetCursorPosition(_currentPlayerPosX + 1, _currentPlayerPosY + 1);
             Console.ForegroundColor = _color;
             Console.WriteLine("O");
+        }
+
+        private void DrawPreviousTile()
+        {
+            Console.SetCursorPosition(_currentPlayerPosX + 1, _currentPlayerPosY + 1);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine('▒');
         }
     }
 }

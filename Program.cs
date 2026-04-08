@@ -50,9 +50,8 @@ namespace GeorgiaDavid_RPG
                 //{
                 //    item.CollectItem(gameManager.player);
                 //}
-                gameManager.levelMap.DrawMap();
+                //gameManager.levelMap.DrawMap();
                 ShowHUD(gameManager);
-                gameManager.player.DrawPlayer();
                 //foreach (Enemy enemiesToSpawn in enemyManager.enemies)
                 //{
                 //    enemiesToSpawn.MoveEnemy(gameManager.player);
@@ -102,6 +101,8 @@ namespace GeorgiaDavid_RPG
 
         static void ShowHUD(GameManager gameManager)
         {
+            Console.SetCursorPosition(0, gameManager.levelMap.map.Length + 2);
+
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Player Health: " + gameManager.player.playerHealthSystem._currentHealth);
             Console.ForegroundColor = ConsoleColor.Yellow;
