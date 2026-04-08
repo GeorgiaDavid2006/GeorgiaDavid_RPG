@@ -66,7 +66,7 @@ namespace GeorgiaDavid_RPG
                 lastTurnWasX = true;
                 if (_currentPlayerPosX - 1 >= _borderLeft)
                 {
-                    if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX - 1] != '▓')
+                    if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX - 1] != '▓' && levelMap.map[_currentPlayerPosY][_currentPlayerPosX - 1] != '█')
                     {
                         _currentPlayerPosX = _currentPlayerPosX - 1;
                         isPlayersTurn = false;
@@ -80,7 +80,7 @@ namespace GeorgiaDavid_RPG
                 lastTurnWasX = true;
                 if (_currentPlayerPosX + 1 <= _borderRight)
                 {
-                    if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX + 1] != '▓')
+                    if (levelMap.map[_currentPlayerPosY][_currentPlayerPosX + 1] != '▓' && levelMap.map[_currentPlayerPosY][_currentPlayerPosX + 1] != '█')
                     {
                         _currentPlayerPosX = _currentPlayerPosX + 1;
                         isPlayersTurn = false;
@@ -94,7 +94,7 @@ namespace GeorgiaDavid_RPG
                 lastTurnWasX = false;
                 if (_currentPlayerPosY - 1 >= _borderUp)
                 {
-                    if (levelMap.map[_currentPlayerPosY - 1][_currentPlayerPosX] != '▓')
+                    if (levelMap.map[_currentPlayerPosY - 1][_currentPlayerPosX] != '▓' && levelMap.map[_currentPlayerPosY - 1][_currentPlayerPosX] != '█')
                     {
                         _currentPlayerPosY = _currentPlayerPosY - 1;
                         isPlayersTurn = false;
@@ -108,7 +108,7 @@ namespace GeorgiaDavid_RPG
                 lastTurnWasX = false;
                 if (_currentPlayerPosY + 1 <= _borderDown)
                 {
-                    if (levelMap.map[_currentPlayerPosY + 1][_currentPlayerPosX] != '▓')
+                    if (levelMap.map[_currentPlayerPosY + 1][_currentPlayerPosX] != '▓' && levelMap.map[_currentPlayerPosY + 1][_currentPlayerPosX] != '█')
                     {
                         _currentPlayerPosY = _currentPlayerPosY + 1;
                         isPlayersTurn = false;

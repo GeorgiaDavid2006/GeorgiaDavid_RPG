@@ -77,7 +77,7 @@ namespace GeorgiaDavid_RPG
         public HealthItem healthItem2 = new HealthItem(7, 10, 1);
         public HealthItem healthItem3 = new HealthItem(30, 7, 1);
 
-        public Gem gem = new Gem(59, 15);
+        public Gem gem = new Gem(92, 23);
 
         public Sign sign = new Sign(1, 4);
     }

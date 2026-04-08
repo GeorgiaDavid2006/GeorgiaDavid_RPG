@@ -55,7 +55,7 @@ namespace GeorgiaDavid_RPG
             {
                 if (_enemyPosX + 1 <= _borderRight)
                 {
-                    if (levelMap.map[_enemyPosY][_enemyPosX + 1] != '▓')
+                    if (levelMap.map[_enemyPosY][_enemyPosX + 1] != '▓' && levelMap.map[_enemyPosY][_enemyPosX + 1] != '█')
                     {
                         _enemyPosX = _enemyPosX + 1;
                     }
@@ -65,7 +65,7 @@ namespace GeorgiaDavid_RPG
             {
                 if (_enemyPosX - 1 >= _borderLeft)
                 {
-                    if (levelMap.map[_enemyPosY][_enemyPosX - 1] != '▓')
+                    if (levelMap.map[_enemyPosY][_enemyPosX - 1] != '▓' && levelMap.map[_enemyPosY][_enemyPosX - 1] != '█')
                     {
                         _enemyPosX = _enemyPosX - 1;
                     }
@@ -75,7 +75,7 @@ namespace GeorgiaDavid_RPG
             {
                 if (_enemyPosY + 1 <= _borderDown)
                 {
-                    if (levelMap.map[_enemyPosY + 1][_enemyPosX] != '▓')
+                    if (levelMap.map[_enemyPosY + 1][_enemyPosX] != '▓' && levelMap.map[_enemyPosY + 1][_enemyPosX] != '█')
                     {
                         _enemyPosY = _enemyPosY + 1;
                     }
@@ -85,7 +85,7 @@ namespace GeorgiaDavid_RPG
             {
                 if (_enemyPosY - 1 >= _borderUp)
                 {
-                    if (levelMap.map[_enemyPosY - 1][_enemyPosX] != '▓')
+                    if (levelMap.map[_enemyPosY - 1][_enemyPosX] != '▓' && levelMap.map[_enemyPosY - 1][_enemyPosX] != '█')
                     {
                         _enemyPosY = _enemyPosY - 1;
                     }
