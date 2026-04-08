@@ -77,7 +77,17 @@ namespace GeorgiaDavid_RPG
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Game Over!");
                 Console.WriteLine("Play again?");
-                Console.ReadKey();
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+                if (keyInfo.Key == ConsoleKey.Y)
+                {
+                    isGameActive = true;
+                }
+
+                else if (keyInfo.Key == ConsoleKey.N)
+                {
+                    Console.Clear();
+                }
             }
 
             if(gameManager.player.hasWon == true)
