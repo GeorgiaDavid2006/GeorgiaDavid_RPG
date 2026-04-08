@@ -76,6 +76,7 @@ namespace GeorgiaDavid_RPG
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Game Over!");
+                Console.WriteLine("Play again?");
                 Console.ReadKey();
             }
 

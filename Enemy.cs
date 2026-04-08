@@ -23,9 +23,9 @@ namespace GeorgiaDavid_RPG
         public ConsoleColor _color;
 
         public int _borderLeft = 0;
-        public int _borderDown = 15;
+        public int _borderDown = 23;
         public int _borderUp = 0;
-        public int _borderRight = 59;
+        public int _borderRight = 92;
 
         public Enemy(int enemyMaxHealth, int enemyCurrentHealth, int enemyPosX, int enemyPosY, ConsoleColor color, int attackPower)
         {
