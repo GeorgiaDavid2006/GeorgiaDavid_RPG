@@ -63,6 +63,7 @@ namespace GeorgiaDavid_RPG
                 //{
                 //    item.DrawItem();
                 //}
+
                 Thread.Sleep(100);
 
                 if (gameManager.player.playerHealthSystem._currentHealth <= 0)
@@ -81,7 +82,7 @@ namespace GeorgiaDavid_RPG
 
                 if (keyInfo.Key == ConsoleKey.Y)
                 {
-                    isGameActive = true;
+                    
                 }
 
                 else if (keyInfo.Key == ConsoleKey.N)

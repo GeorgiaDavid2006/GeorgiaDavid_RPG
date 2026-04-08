@@ -13,7 +13,7 @@ namespace GeorgiaDavid_RPG
 
         public Map()
         {
-            string path = @"Map.txt";
+            string path = @"Map1.txt";
 
             map = File.ReadAllLines(path);
         }
