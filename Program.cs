@@ -50,12 +50,11 @@ namespace GeorgiaDavid_RPG
                 {
                     item.CollectItem(gameManager.player);
                 }
-                gameManager.levelMap.DrawMap();
                 ShowHUD(gameManager);
                 foreach (Enemy enemiesToSpawn in enemyManager.enemies)
                 {
                     enemiesToSpawn.MoveEnemy(gameManager.player);
-                    enemiesToSpawn.DrawEnemy();
+                
                 }
                 gameManager.player.isPlayersTurn = true;
                 foreach (Item item in itemManager.items)

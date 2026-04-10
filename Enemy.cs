@@ -58,7 +58,9 @@ namespace GeorgiaDavid_RPG
                 {
                     if (levelMap.map[_enemyPosY][_enemyPosX + 1] != '▓' && levelMap.map[_enemyPosY][_enemyPosX + 1] != '█')
                     {
+                        DrawPreviousTile();
                         _enemyPosX = _enemyPosX + 1;
+                        DrawEnemy();
                     }
                 }
             }
@@ -68,7 +70,9 @@ namespace GeorgiaDavid_RPG
                 {
                     if (levelMap.map[_enemyPosY][_enemyPosX - 1] != '▓' && levelMap.map[_enemyPosY][_enemyPosX - 1] != '█')
                     {
+                        DrawPreviousTile();
                         _enemyPosX = _enemyPosX - 1;
+                        DrawEnemy();
                     }
                 }
             }
@@ -78,7 +82,9 @@ namespace GeorgiaDavid_RPG
                 {
                     if (levelMap.map[_enemyPosY + 1][_enemyPosX] != '▓' && levelMap.map[_enemyPosY + 1][_enemyPosX] != '█')
                     {
+                        DrawPreviousTile();
                         _enemyPosY = _enemyPosY + 1;
+                        DrawEnemy();
                     }
                 }
             }
@@ -88,7 +94,9 @@ namespace GeorgiaDavid_RPG
                 {
                     if (levelMap.map[_enemyPosY - 1][_enemyPosX] != '▓' && levelMap.map[_enemyPosY - 1][_enemyPosX] != '█')
                     {
+                        DrawPreviousTile();
                         _enemyPosY = _enemyPosY - 1;
+                        DrawEnemy();
                     }
                 }
             }
@@ -147,6 +155,13 @@ namespace GeorgiaDavid_RPG
             Console.SetCursorPosition(_enemyPosX + 1, _enemyPosY + 1);
             Console.ForegroundColor = _color;
             Console.WriteLine("O");
+        }
+
+        public virtual void DrawPreviousTile()
+        {
+            Console.SetCursorPosition(_enemyPosX + 1, _enemyPosY + 1);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine('▒');
         }
     }
 }

@@ -41,28 +41,36 @@ namespace GeorgiaDavid_RPG
             {
                 if (_enemyPosX + 1 <= _borderRight)
                 {
+                    DrawPreviousTile();
                     _enemyPosX = _enemyPosX + 1;
+                    DrawEnemy();
                 }
             }
             if (_enemyPosX > player._currentPlayerPosX)
             {
                 if (_enemyPosX - 1 >= _borderLeft)
                 {
+                    DrawPreviousTile();
                     _enemyPosX = _enemyPosX - 1;
+                    DrawEnemy();
                 }
             }
             if (_enemyPosY < player._currentPlayerPosY)
             {
                 if (_enemyPosY + 1 <= _borderDown)
                 {
+                    DrawPreviousTile();
                     _enemyPosY = _enemyPosY + 1;
+                    DrawEnemy();
                 }
             }
             if (_enemyPosY > player._currentPlayerPosY)
             {
                 if (_enemyPosY - 1 >= _borderUp)
                 {
+                    DrawPreviousTile();
                     _enemyPosY = _enemyPosY - 1;
+                    DrawEnemy();
                 }
             }
 
