@@ -80,5 +80,7 @@ namespace GeorgiaDavid_RPG
         public Gem gem = new Gem(92, 23);
 
         public Sign sign = new Sign(1, 4);
+
+        public Key key = new Key(75, 13);
     }
 }

@@ -28,40 +28,40 @@ namespace GeorgiaDavid_RPG
             itemManager.items = new List<Item> { gameManager.gold1, gameManager.gold2, gameManager.gold3, gameManager.gold4, gameManager.gold5, gameManager.gold6, gameManager.gold7, gameManager.gold8,
             gameManager.gold9, gameManager.gold10, gameManager.gold11, gameManager.gold12, gameManager.gold13, gameManager.gold14, gameManager.gold15, gameManager.gold16, gameManager.gold17,
             gameManager.gold18, gameManager.gold19, gameManager.gold20, gameManager.gold21, gameManager.gold22, gameManager.gold23, gameManager.gold24, gameManager.gold25, gameManager.healthItem1, 
-            gameManager.healthItem2, gameManager.healthItem3, gameManager.gem, gameManager.sign};
+            gameManager.healthItem2, gameManager.healthItem3, gameManager.gem, gameManager.sign, gameManager.key};
 
             gameManager.levelMap.DrawMap();
             ShowHUD(gameManager);
             gameManager.player.DrawPlayer();
-            //foreach(Enemy enemiesToSpawn in enemyManager.enemies)
-            //{
-            //    enemiesToSpawn.DrawEnemy();
-            //}
-            //foreach(Item item in itemManager.items)
-            //{
-            //    item.DrawItem();
-            //}
+            foreach(Enemy enemiesToSpawn in enemyManager.enemies)
+            {
+                enemiesToSpawn.DrawEnemy();
+            }
+            foreach(Item item in itemManager.items)
+            {
+                item.DrawItem();
+            }
 
             while (isGameActive && gameManager.player.hasWon == false)
             {
                 Console.SetCursorPosition(0, 0);
                 gameManager.player.PlayerInput(enemyManager.enemies);
-                //foreach(Item item in itemManager.items)
-                //{
-                //    item.CollectItem(gameManager.player);
-                //}
-                //gameManager.levelMap.DrawMap();
+                foreach(Item item in itemManager.items)
+                {
+                    item.CollectItem(gameManager.player);
+                }
+                gameManager.levelMap.DrawMap();
                 ShowHUD(gameManager);
-                //foreach (Enemy enemiesToSpawn in enemyManager.enemies)
-                //{
-                //    enemiesToSpawn.MoveEnemy(gameManager.player);
-                //    enemiesToSpawn.DrawEnemy();
-                //}
+                foreach (Enemy enemiesToSpawn in enemyManager.enemies)
+                {
+                    enemiesToSpawn.MoveEnemy(gameManager.player);
+                    enemiesToSpawn.DrawEnemy();
+                }
                 gameManager.player.isPlayersTurn = true;
-                //foreach (Item item in itemManager.items)
-                //{
-                //    item.DrawItem();
-                //}
+                foreach (Item item in itemManager.items)
+                {
+                    item.DrawItem();
+                }
 
                 Thread.Sleep(100);
 
