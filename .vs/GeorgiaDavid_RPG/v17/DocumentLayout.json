@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|c:\\users\\georg\\probuildercity\\georgiadavid_rpg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|c:\\users\\georg\\probuildercity\\georgiadavid_rpg\\greenenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|C:\\Users\\georg\\ProbuilderCity\\GeorgiaDavid_RPG\\greenenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8C52A2F-9428-4C49-99E5-C05D6169F9B6}|GeorgiaDavid_RPG.csproj|solutionrelative:greenenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -110,8 +110,7 @@
               "RelativeToolTip": "bin\\Map1.Txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2026-04-10T13:33:07.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-10T13:33:07.242Z"
             },
             {
               "$type": "Document",
@@ -219,8 +218,7 @@
               "RelativeToolTip": "Player.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgBAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T00:44:39.989Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-14T00:44:39.989Z"
             },
             {
               "$type": "Document",
@@ -232,8 +230,7 @@
               "RelativeToolTip": "GameManager.cs",
               "ViewState": "AQIAAHYAAAAAAAAAAAAAAAsAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T21:37:23.533Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T21:37:23.533Z"
             },
             {
               "$type": "Document",
@@ -306,8 +303,7 @@
               "RelativeToolTip": "GreenEnemy.cs",
               "ViewState": "AQIAAD8AAAAAAAAAAAAowFkAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T21:47:03.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T21:47:03.044Z"
             },
             {
               "$type": "Document",
