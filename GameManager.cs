@@ -2,32 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GeorgiaDavid_RPG
 {
     class GameManager
     {
+        public bool isGameActive = true;
+
         public Map levelMap = new Map();
         public Player player = new Player(5, 5, 0, 0, ConsoleColor.Red);
 
         public BlueEnemy blueEnemy1 = new BlueEnemy(29, 0, 1);
         public BlueEnemy blueEnemy2 = new BlueEnemy(6, 8, 1);
-        public BlueEnemy blueEnemy3 = new BlueEnemy(4, 3, 1);
-        public BlueEnemy blueEnemy4 = new BlueEnemy(8, 10, 1);
-        public BlueEnemy blueEnemy5 = new BlueEnemy(51, 15, 1);
-        public BlueEnemy blueEnemy6 = new BlueEnemy(51, 12, 1);
-        public BlueEnemy blueEnemy7 = new BlueEnemy(5, 15, 1);
+        public BlueEnemy blueEnemy3 = new BlueEnemy(4, 10, 1);
+        public BlueEnemy blueEnemy4 = new BlueEnemy(11, 19, 1);
+        public BlueEnemy blueEnemy5 = new BlueEnemy(51, 19, 1);
+        public BlueEnemy blueEnemy6 = new BlueEnemy(51, 14, 1);
+        public BlueEnemy blueEnemy7 = new BlueEnemy(5, 19, 1);
         public BlueEnemy blueEnemy8 = new BlueEnemy(11, 6, 1);
-        public BlueEnemy blueEnemy9 = new BlueEnemy(14, 12, 1);
+        public BlueEnemy blueEnemy9 = new BlueEnemy(14, 14, 1);
         public BlueEnemy blueEnemy10 = new BlueEnemy(9, 9, 1);
-        public BlueEnemy blueEnemy11 = new BlueEnemy(12, 7, 1);
+        public BlueEnemy blueEnemy11 = new BlueEnemy(12, 1, 1);
         public BlueEnemy blueEnemy12 = new BlueEnemy(26, 7, 1);
         public BlueEnemy blueEnemy13 = new BlueEnemy(23, 10, 1);
-        public BlueEnemy blueEnemy14 = new BlueEnemy(10, 12, 1);
-        public BlueEnemy blueEnemy15 = new BlueEnemy(5, 13, 1);
-        public BlueEnemy blueEnemy16 = new BlueEnemy(31, 15, 1);
-        public BlueEnemy blueEnemy17 = new BlueEnemy(31, 12, 1);
+        public BlueEnemy blueEnemy14 = new BlueEnemy(10, 16, 1);
+        public BlueEnemy blueEnemy15 = new BlueEnemy(5, 14, 1);
+        public BlueEnemy blueEnemy16 = new BlueEnemy(30, 18, 1);
+        public BlueEnemy blueEnemy17 = new BlueEnemy(20, 18, 1);
         public BlueEnemy blueEnemy18 = new BlueEnemy(45, 5, 1);
         public BlueEnemy blueEnemy19 = new BlueEnemy(49, 2, 1);
         public BlueEnemy blueEnemy20 = new BlueEnemy(41, 7, 1);
@@ -82,5 +85,90 @@ namespace GeorgiaDavid_RPG
         public Sign sign = new Sign(1, 4);
 
         public Key key = new Key(75, 13);
+
+        public void Init(GameManager gameManager, EnemyManager enemyManager, ItemManager itemManager)
+        {
+            gameManager.levelMap.DrawMap();
+            ShowHUD(gameManager);
+            gameManager.player.DrawPlayer();
+            foreach (Enemy enemiesToSpawn in enemyManager.enemies)
+            {
+                enemiesToSpawn.DrawEnemy();
+            }
+            foreach (Item item in itemManager.items)
+            {
+                item.DrawItem();
+            }
+        }
+
+        public void ShowHUD(GameManager gameManager)
+        {
+            Console.SetCursorPosition(0, gameManager.levelMap.map.Length + 2);
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Player Health: " + gameManager.player.playerHealthSystem._currentHealth);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Gold = " + gameManager.player._amountOfGold);
+            if (gameManager.sign.wasRead == true)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Many powerful enemies inside of the treasure trove, enter at your own risk");
+            }
+        }
+
+        public void Update(GameManager gameManager, EnemyManager enemyManager, ItemManager itemManager)
+        {
+            Console.SetCursorPosition(0, 0);
+            gameManager.player.PlayerInput(enemyManager.enemies);
+            foreach (Item item in itemManager.items)
+            {
+                item.CollectItem(gameManager.player);
+            }
+            gameManager.ShowHUD(gameManager);
+            foreach (Enemy enemiesToSpawn in enemyManager.enemies)
+            {
+                enemiesToSpawn.MoveEnemy(gameManager.player);
+
+            }
+            gameManager.player.isPlayersTurn = true;
+            foreach (Item item in itemManager.items)
+            {
+                item.DrawItem();
+            }
+
+            Thread.Sleep(100);
+
+            if (gameManager.player.playerHealthSystem._currentHealth <= 0)
+            {
+                isGameActive = false;
+            }
+        }
+
+        public void GameOver()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Game Over!");
+            Console.WriteLine("Play again?");
+            ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+            if (keyInfo.Key == ConsoleKey.Y)
+            {
+
+            }
+
+            else if (keyInfo.Key == ConsoleKey.N)
+            {
+                Console.Clear();
+            }
+        }
+
+        public void Win()
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Level Clear");
+            Console.ReadKey();
+        }
     }
 }

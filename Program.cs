@@ -9,7 +9,7 @@ namespace GeorgiaDavid_RPG
 {
     internal class Program
     {
-        static bool isGameActive = true;
+        
 
         static void Main(string[] args)
         {
@@ -30,86 +30,21 @@ namespace GeorgiaDavid_RPG
             gameManager.gold18, gameManager.gold19, gameManager.gold20, gameManager.gold21, gameManager.gold22, gameManager.gold23, gameManager.gold24, gameManager.gold25, gameManager.healthItem1, 
             gameManager.healthItem2, gameManager.healthItem3, gameManager.gem, gameManager.sign, gameManager.key};
 
-            gameManager.levelMap.DrawMap();
-            ShowHUD(gameManager);
-            gameManager.player.DrawPlayer();
-            foreach(Enemy enemiesToSpawn in enemyManager.enemies)
+            gameManager.Init(gameManager, enemyManager, itemManager);
+
+            while (gameManager.isGameActive && gameManager.player.hasWon == false)
             {
-                enemiesToSpawn.DrawEnemy();
-            }
-            foreach(Item item in itemManager.items)
-            {
-                item.DrawItem();
+                gameManager.Update(gameManager, enemyManager, itemManager);
             }
 
-            while (isGameActive && gameManager.player.hasWon == false)
+            if (gameManager.isGameActive == false)
             {
-                Console.SetCursorPosition(0, 0);
-                gameManager.player.PlayerInput(enemyManager.enemies);
-                foreach(Item item in itemManager.items)
-                {
-                    item.CollectItem(gameManager.player);
-                }
-                ShowHUD(gameManager);
-                foreach (Enemy enemiesToSpawn in enemyManager.enemies)
-                {
-                    enemiesToSpawn.MoveEnemy(gameManager.player);
-                
-                }
-                gameManager.player.isPlayersTurn = true;
-                foreach (Item item in itemManager.items)
-                {
-                    item.DrawItem();
-                }
-
-                Thread.Sleep(100);
-
-                if (gameManager.player.playerHealthSystem._currentHealth <= 0)
-                {
-                    isGameActive = false;
-                }
-            }
-
-            if (isGameActive == false)
-            {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Game Over!");
-                Console.WriteLine("Play again?");
-                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-
-                if (keyInfo.Key == ConsoleKey.Y)
-                {
-                    
-                }
-
-                else if (keyInfo.Key == ConsoleKey.N)
-                {
-                    Console.Clear();
-                }
+                gameManager.GameOver();
             }
 
             if(gameManager.player.hasWon == true)
             {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Level Clear");
-                Console.ReadKey();
-            }
-        }
-
-        static void ShowHUD(GameManager gameManager)
-        {
-            Console.SetCursorPosition(0, gameManager.levelMap.map.Length + 2);
-
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Player Health: " + gameManager.player.playerHealthSystem._currentHealth);
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Gold = " + gameManager.player._amountOfGold);
-            if (gameManager.sign.wasRead == true)
-            {
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Many powerful enemies inside of the treasure trove, enter at your own risk");
+                gameManager.Win();
             }
         }
     }
